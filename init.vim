@@ -11,7 +11,6 @@ Plug 'pbogut/deoplete-elm'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'KKPMW/oldbook-vim'
 Plug 'mhartington/oceanic-next'
 call plug#end()
 
@@ -79,6 +78,16 @@ nnoremap <C-H> <C-W><C-H>
 " inoremap <A-l> <C-o>l
 " inoremap <A-a> <C-o>A
 " inoremap <A-i> <C-o>I
+
+" hardmode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+noremap h <NOP>
+noremap l <NOP>
+" noremap j <NOP>
+" noremap k <NOP>
 
 " move a line
 nnoremap <A-UP> :m-2<CR>
