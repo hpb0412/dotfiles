@@ -1,0 +1,3 @@
+alias lga="ls -lahX --group-directories"
+alias "]"="xdg-open"
+alias cls="clear"

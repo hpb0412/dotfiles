@@ -1,0 +1,8 @@
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	email = info@example.com
+	name = Khoa Do
+[alias]
+  g = grep --break --heading --line-number
+
