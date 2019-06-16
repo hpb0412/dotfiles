@@ -101,6 +101,10 @@ vnoremap <A-DOWN> :m '>+<CR>gv=gv
 let mapleader = ","
 " save file
 map <leader>w :w<CR>
+" open fzf
+map <C-p>p :Files<CR>
+" switch last 2 files
+map <leader><leader> <C-^>
 " open nerdtree
 map <leader>b :NERDTreeToggle<CR>
 
