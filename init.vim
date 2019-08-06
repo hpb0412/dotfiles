@@ -8,6 +8,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'slashmili/alchemist.vim'
 Plug 'pbogut/deoplete-elm'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -102,7 +103,7 @@ let mapleader = ","
 " save file
 map <leader>w :w<CR>
 " open fzf
-map <C-p>p :Files<CR>
+map <C-p> :Files<CR>
 " switch last 2 files
 map <leader><leader> <C-^>
 " open nerdtree
@@ -113,3 +114,7 @@ let g:deoplete#enable_at_startup = 1
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
+
+" deoplete-go
+let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
+
