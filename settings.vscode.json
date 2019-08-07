@@ -1,0 +1,76 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.lineNumbers":"relative",
+  "editor.minimap.enabled": false,
+  "editor.renderIndentGuides": true,
+  "editor.renderWhitespace": "none",
+  "editor.rulers": [80],
+  "explorer.openEditors.visible": 0,
+  "window.zoomLevel": 0,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "workbench.sideBar.location": "left",
+  "diffEditor.renderSideBySide": false,
+  "breadcrumbs.enabled": true,
+  "editor.renderControlCharacters": false,
+  "workbench.colorTheme": "Oceanic Next",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[elm]": {
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+  "[php]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "prettier.eslintIntegration": true,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.semi": true,
+  "vim.hlsearch": true,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.leader": ",",
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "k"], "after": ["<ESC>"] },
+    { "before": ["k", "j"], "after": ["<ESC>"] },
+    { "before": ["j", "j"], "after": ["<ESC>"] }
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {"before":["<Up>"], "after": ["<NOP>"]},
+    {"before":["<Down>"], "after": ["<NOP>"]},
+    {"before":["<Left>"], "after": ["<NOP>"]},
+    {"before":["<Right>"], "after": ["<NOP>"]}
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {"before": ["<leader>", "w"], "commands": [":w"]},
+    {"before":["<Up>"], "after": ["<NOP>"]},
+    {"before":["<Down>"], "after": ["<NOP>"]},
+    {"before":["<Left>"], "after": ["<NOP>"]},
+    {"before":["<Right>"], "after": ["<NOP>"]}
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {"before":["<Up>"], "after": ["<NOP>"]},
+    {"before":["<Down>"], "after": ["<NOP>"]},
+    {"before":["<Left>"], "after": ["<NOP>"]},
+    {"before":["<Right>"], "after": ["<NOP>"]}
+  ],
+  "files.associations": {
+    "Dockerfile": "dockerfile"
+  }
+}
