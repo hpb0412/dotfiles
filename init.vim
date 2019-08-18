@@ -114,6 +114,7 @@ let g:deoplete#enable_at_startup = 1
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
+let NERDTreeShowHidden=1
 
 " deoplete-go
 let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
