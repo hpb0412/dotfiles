@@ -1,40 +1,56 @@
 {
-  "editor.tabSize": 2,
+  // ===========================================================================
+  // Visual Studio Code Settings
+  // ===========================================================================
+  "diffEditor.renderSideBySide": false,
+  "breadcrumbs.enabled": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
   "editor.insertSpaces": true,
-  "editor.lineNumbers":"relative",
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": false,
   "editor.renderIndentGuides": true,
   "editor.renderWhitespace": "none",
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
+  "editor.tabSize": 4,
   "explorer.openEditors.visible": 0,
-  "window.zoomLevel": 0,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Predawn",
+  "workbench.iconTheme": "ayu",
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultSettings": true,
+  // ===========================================================================
+  // Programming Language Specific Settings
+  // ===========================================================================
+  "[csv]": {
+    "files.trimFinalNewlines": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  // ===========================================================================
+  // Plugin Settings
+  // ===========================================================================
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
-  "workbench.sideBar.location": "left",
-  "diffEditor.renderSideBySide": false,
-  "breadcrumbs.enabled": true,
-  "editor.renderControlCharacters": false,
-  "workbench.colorTheme": "Oceanic Next",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[elm]": {
-    "editor.detectIndentation": true,
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4
-  },
-  "[php]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4
-  },
-  "[javascript]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // "prettier.eslintIntegration": true,
+  "python.formatting.provider": "black",
+  "python.pythonPath": "python3",
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
@@ -47,30 +63,143 @@
   "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.leader": ",",
   "vim.insertModeKeyBindings": [
-    { "before": ["j", "k"], "after": ["<ESC>"] },
-    { "before": ["k", "j"], "after": ["<ESC>"] },
-    { "before": ["j", "j"], "after": ["<ESC>"] }
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<ESC>"
+      ]
+    },
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<ESC>"
+      ]
+    },
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<ESC>"
+      ]
+    }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
-    {"before":["<Up>"], "after": ["<NOP>"]},
-    {"before":["<Down>"], "after": ["<NOP>"]},
-    {"before":["<Left>"], "after": ["<NOP>"]},
-    {"before":["<Right>"], "after": ["<NOP>"]}
+    {
+      "before": [
+        "<Up>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Down>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Left>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Right>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
-    {"before": ["<leader>", "w"], "commands": [":w"]},
-    {"before":["<Up>"], "after": ["<NOP>"]},
-    {"before":["<Down>"], "after": ["<NOP>"]},
-    {"before":["<Left>"], "after": ["<NOP>"]},
-    {"before":["<Right>"], "after": ["<NOP>"]}
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        ":w"
+      ]
+    },
+    {
+      "before": [
+        "<Up>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Down>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Left>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Right>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
-    {"before":["<Up>"], "after": ["<NOP>"]},
-    {"before":["<Down>"], "after": ["<NOP>"]},
-    {"before":["<Left>"], "after": ["<NOP>"]},
-    {"before":["<Right>"], "after": ["<NOP>"]}
-  ],
-  "files.associations": {
-    "Dockerfile": "dockerfile"
-  }
+    {
+      "before": [
+        "<Up>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Down>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Left>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    },
+    {
+      "before": [
+        "<Right>"
+      ],
+      "after": [
+        "<NOP>"
+      ]
+    }
+  ]
 }
