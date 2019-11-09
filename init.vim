@@ -119,5 +119,6 @@ let NERDTreeShowHidden=1
 " deoplete-go
 let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
 
-hi Normal guibg=None ctermbg=None
-
+highlight Normal guibg=NONE ctermbg=NONE
+" highlight NonText guibg=NONE ctermbg=NONE
+highlight EndOfBuffer guibg=NONE ctermbg=NONE
