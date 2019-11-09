@@ -59,6 +59,8 @@ set splitright                        " create new splits to the right
 " key mapping base
 inore jk <Esc>
 inore kj <Esc>
+inore jj <Esc>
+inore kk <Esc>
 
 " window navigation
 nnoremap <C-J> <C-W><C-J>
