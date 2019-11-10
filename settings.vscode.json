@@ -89,6 +89,15 @@
       "after": [
         "<ESC>"
       ]
+    },
+    {
+      "before": [
+        "k",
+        "k"
+      ],
+      "after": [
+        "<ESC>"
+      ]
     }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
@@ -201,5 +210,6 @@
         "<NOP>"
       ]
     }
-  ]
+  ],
+  "python.jediEnabled": false
 }
