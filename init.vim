@@ -13,6 +13,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mhartington/oceanic-next'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'dense-analysis/ale'
 call plug#end()
 
 " base
@@ -109,7 +111,7 @@ map <C-p> :Files<CR>
 " switch last 2 files
 map <leader><leader> <C-^>
 " open nerdtree
-map <leader>b :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -121,6 +123,16 @@ let NERDTreeShowHidden=1
 " deoplete-go
 let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
 
+" formatting / linting with ALE
+let g:ale_fixers = {
+\ 'javascript': ['prettier'],
+\ 'jsx': ['prettier'],
+\ 'css': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+
+" Make transparent background
 highlight Normal guibg=NONE ctermbg=NONE
 " highlight NonText guibg=NONE ctermbg=NONE
 highlight EndOfBuffer guibg=NONE ctermbg=NONE
+
