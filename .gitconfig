@@ -1,7 +1,8 @@
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim
 [user]
-	email = info@example.com
+	email = happyboy0412@gmail.com
 	name = Khoa Do
 [alias]
   g = grep --break --heading --line-number
