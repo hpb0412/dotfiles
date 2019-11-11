@@ -45,7 +45,11 @@ set expandtab                         " ensure that when you hit tab it will act
 " text appearance
 set list                              " show all invisible characters
 set listchars=tab:>·,trail:·,nbsp:¬   " but only show useful chaaracters
-set nowrap                            " disable line wrapping
+
+" line wrapping
+" set nowrap                            " disable line wrapping
+set wrap linebreak nolist
+set showbreak=â€¦
 
 " searching
 set hlsearch                          " highlight search matches
@@ -69,6 +73,28 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" move with linewrap
+vmap <A-j> gj
+vmap <A-k> gk
+vmap <A-4> g$
+vmap <A-6> g^
+vmap <A-0> g^
+nmap <A-j> gj
+nmap <A-k> gk
+nmap <A-4> g$
+nmap <A-6> g^
+nmap <A-0> g^
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-4> g$
+vmap <D-6> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-4> g$
+nmap <D-6> g^
+nmap <D-0> g^
 
 " move in insert mode
 " inoremap ˙ <C-o>h
