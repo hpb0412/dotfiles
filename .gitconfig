@@ -1,11 +1,12 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
+	autocrlf = input
 [user]
 	email = happyboy0412@gmail.com
 	name = Khoa Do
 [alias]
-  g = grep --break --heading --line-number
+	g = grep --break --heading --line-number
 
 [pull]
 	ff = only
