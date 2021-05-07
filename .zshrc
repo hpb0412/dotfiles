@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$PATH:$(yarn global bin)"
 
 source ~/dotfiles/.alias
 
