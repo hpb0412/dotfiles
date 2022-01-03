@@ -1,5 +1,5 @@
 " Plugins
-call plug#begin('~/.local/share/nvim/bundle')
+call plug#begin('~/.local/share/nvim/site/pack')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'

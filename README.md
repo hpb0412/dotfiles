@@ -16,3 +16,8 @@ This will tell you what to do to make these files run smoothly.
 ### .gitconfig
 
 - Update the email
+
+
+### vim-plug
+
+- Using recommended location to store plugins. [read more](https://stackoverflow.com/a/50122211/3550678)
