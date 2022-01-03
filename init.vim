@@ -12,8 +12,10 @@ Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'mhartington/oceanic-next'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+Plug 'mhartington/oceanic-next'
+Plug 'ayu-theme/ayu-vim'
 " Plug 'dense-analysis/ale'
 call plug#end()
 
@@ -32,7 +34,9 @@ set showcmd                           " show any commands
 " color scheme
 set termguicolors                     " enable true colors
 "colorscheme oldbook
-colorscheme OceanicNext
+"colorscheme OceanicNext
+let ayucolor="mirage"
+colorscheme ayu
 
 " whitespace
 set nojoinspaces                      " use one space, not two, after punctuation
