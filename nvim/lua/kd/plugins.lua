@@ -128,9 +128,9 @@ return packer.startup(function(use)
 	})
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 
-  -------------
-  -- Non LSP --
-  -------------
+	-------------
+	-- Non LSP --
+	-------------
 
 	use({
 		"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
@@ -144,9 +144,9 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	-- use "nvim-telescope/telescope-media-files.nvim"
 
-  ---------------------------------------------
+	---------------------------------------------
 	-- Syntax Highlight/Language Parser engine --
-  ---------------------------------------------
+	---------------------------------------------
 
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -197,9 +197,9 @@ return packer.startup(function(use)
 		end,
 	})
 
-  ----------------
+	----------------
 	-- Git Stuffs --
-  ----------------
+	----------------
 
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -209,6 +209,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use("sindrets/diffview.nvim")
+	use("f-person/git-blame.nvim")
 
 	-- Treeview
 	use("kyazdani42/nvim-tree.lua")
@@ -244,7 +245,6 @@ return packer.startup(function(use)
 
 	-- Dashboard
 	use("goolord/alpha-nvim")
-
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
