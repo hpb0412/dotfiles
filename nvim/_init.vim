@@ -1,22 +1,23 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/site/pack')
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
-Plug 'slashmili/alchemist.vim'
-Plug 'pbogut/deoplete-elm'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+Plug 'dense-analysis/ale'
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'slashmili/alchemist.vim'
+" Plug 'pbogut/deoplete-elm'
+" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 Plug 'mhartington/oceanic-next'
 Plug 'ayu-theme/ayu-vim'
-" Plug 'dense-analysis/ale'
 call plug#end()
 
 " base
@@ -121,8 +122,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap h <NOP>
 noremap l <NOP>
-" noremap j <NOP>
-" noremap k <NOP>
+noremap j <NOP>
+noremap k <NOP>
 
 " move a line
 nnoremap <A-UP> :m-2<CR>
@@ -135,7 +136,7 @@ vnoremap <A-DOWN> :m '>+<CR>gv=gv
 " LEADER
 let mapleader = ","
 " save file
-map <leader>w :w<CR>
+" map <leader>w :w<CR>
 " open fzf
 map <C-p> :Files<CR>
 " switch last 2 files
@@ -144,16 +145,29 @@ map <leader><leader> <C-^>
 map <C-b> :NERDTreeToggle<CR>
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
-
-" nerdcommenter
-let g:NERDSpaceDelims = 1
-let NERDTreeShowHidden=1
+" let g:deoplete#enable_at_startup = 1
 
 " deoplete-go
-let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
+" let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
 
-" formatting / linting with ALE
+" Yggdroot/indentLine
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_setColors = 0
+
+" nerdcommenter
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+
+" nerdtree
+let NERDTreeShowHidden=1
+
+" dense-analysis/ale
 let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'jsx': ['prettier'],

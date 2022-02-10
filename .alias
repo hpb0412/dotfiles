@@ -1,3 +1,4 @@
+alias lz="lazygit"
 alias lga="ls -lahX --group-directories"
 alias "]"="open"
 alias cls="clear"
