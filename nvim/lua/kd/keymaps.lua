@@ -70,6 +70,7 @@ keymap("n", "˚", ":m-2<CR>==", opts) -- on Mac <A-k> is ˚
 keymap("n", "∆", ":m+1<CR>==", opts) -- on Mac <A-j> is ∆
 
 -- Telescope --
+keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<leader><S-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
