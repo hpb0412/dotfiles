@@ -33,6 +33,17 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   -- guifont = "monospace:h17",               -- the font used in graphical neovim applications
+
+  -- folding (required nvim-treesitter)
+  -- learn from here: https://www.reddit.com/r/neovim/comments/psl8rq/sexy_folds/
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
+  foldtext = [[substitute(getline(v:foldstart),'\t',repeat(' ',&tabstop),'g').'...'.trim(getline(v:foldend))]],
+  fillchars = { fold = " " },
+  foldnestmax = 3,
+  foldminlines = 1,
+  foldenable = false, -- you don't want it folded at launching/openning a file
+  -- foldlevel = 20, -- you can replace `foldenable` option: unfold first 20 levels
 }
 
 vim.opt.shortmess:append "c"
@@ -42,3 +53,4 @@ for k, v in pairs(options) do
 end
 
 vim.cmd [[set iskeyword+=-]]
+
