@@ -9,7 +9,7 @@ This is my `Lua` configuaration for my modern Neovim
 
 ## Notes
 
-Sync this configuaration target MacOS there are some notes for you if you want to reuse on other OSs
+Since this configuaration target MacOS there are some notes for you if you want to reuse on other OSs
 
 - `Options` key (a.k.a `Alt` key on other systems)
   On Mac, with standard international keyboard layout, everytime you use `<Options + number | letter>`
