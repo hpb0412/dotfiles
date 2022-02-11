@@ -142,7 +142,7 @@ return packer.startup(function(use)
 
 	-- Fuzzy Search/Find
 	use("nvim-telescope/telescope.nvim")
-	-- use "nvim-telescope/telescope-media-files.nvim"
+	use "nvim-telescope/telescope-media-files.nvim"
 
 	---------------------------------------------
 	-- Syntax Highlight/Language Parser engine --
@@ -209,7 +209,10 @@ return packer.startup(function(use)
 		end,
 	})
 	use("sindrets/diffview.nvim")
-	use("f-person/git-blame.nvim")
+	use({
+    "f-person/git-blame.nvim",
+    event = "BufRead",
+  })
 
 	-- Treeview
 	use("kyazdani42/nvim-tree.lua")
