@@ -54,7 +54,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim") -- load optimizing
 	use({
 		"nathom/filetype.nvim", -- better filetype => faster booting
-		config = function()
+		setup = function()
 			vim.g.did_load_filetypes = 1
 		end,
 	})
@@ -251,6 +251,14 @@ return packer.startup(function(use)
 
 	-- Dashboard
 	use("goolord/alpha-nvim")
+
+	use({
+		"simrat39/symbols-outline.nvim",
+		cmd = "SymbolsOutline",
+		setup = function()
+			require("kd.symbols-outline")
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
