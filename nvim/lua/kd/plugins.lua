@@ -26,7 +26,7 @@ vim.cmd([[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	vim.notify("Failed to require `packer`")
+	vim.notify("`packer` not found!")
 	return
 end
 
@@ -106,15 +106,18 @@ return packer.startup(function(use)
 
 	-- Snippets
 	use({
-		"L3MON4D3/LuaSnip", -- snippet engine
-		after = "nvim-cmp",
+		"L3MON4D3/LuaSnip", -- snippet engine written in Lua
+		after = "cmp_luasnip",
 	})
 	use({
 		"rafamadriz/friendly-snippets", -- a bunch of snippets to use
-		after = "nvim-cmp",
+		after = "LuaSnip",
 	})
 
-	-- Language Server Protocol - a.k.a LSP
+	------------------------------------------
+	-- Language Server Protocol - a.k.a LSP --
+	------------------------------------------
+
 	use({
 		"neovim/nvim-lspconfig", -- enable LSP
 		event = "BufRead",
@@ -142,7 +145,7 @@ return packer.startup(function(use)
 
 	-- Fuzzy Search/Find
 	use("nvim-telescope/telescope.nvim")
-	use "nvim-telescope/telescope-media-files.nvim"
+	-- use "nvim-telescope/telescope-media-files.nvim"
 
 	---------------------------------------------
 	-- Syntax Highlight/Language Parser engine --
@@ -156,24 +159,20 @@ return packer.startup(function(use)
 			require("kd.treesitter")
 		end,
 	})
-	use({
-		"p00f/nvim-ts-rainbow",
-		after = "nvim-treesitter",
-	})
-	use({
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		after = "nvim-treesitter",
-	})
+	use("p00f/nvim-ts-rainbow") -- make each pair diffent colors (rainbow)
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("windwp/nvim-ts-autotag") -- Autoclose tags
+
+	-------------------------------------------
+	-- Utils without depending on TreeSitter --
+	-------------------------------------------
+
 	use({
 		"windwp/nvim-autopairs", -- Auto pairs - a.k.a ()[]{}''``""
 		event = "InsertEnter",
 		config = function()
 			require("kd.autopairs")
 		end,
-	})
-	use({
-		"windwp/nvim-ts-autotag", -- Autoclose tags
-		event = "BufRead",
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim", -- Indent lines
@@ -210,9 +209,13 @@ return packer.startup(function(use)
 	})
 	use("sindrets/diffview.nvim")
 	use({
-    "f-person/git-blame.nvim",
-    event = "BufRead",
-  })
+		"f-person/git-blame.nvim",
+		event = "BufRead",
+	})
+
+	------------------------
+	-- Convenience Stuffs --
+	------------------------
 
 	-- Treeview
 	use("kyazdani42/nvim-tree.lua")

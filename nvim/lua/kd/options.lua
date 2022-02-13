@@ -44,6 +44,10 @@ local options = {
   foldminlines = 1,
   foldenable = false, -- you don't want it folded at launching/openning a file
   -- foldlevel = 20, -- you can replace `foldenable` option: unfold first 20 levels
+
+  -- Searching with Grep
+  grepprg = "rg --vimgrep --no-heading --smart-case",
+  grepformat = "%f:%l:%c:%m",
 }
 
 vim.opt.shortmess:append "c"

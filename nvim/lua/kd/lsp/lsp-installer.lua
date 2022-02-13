@@ -22,6 +22,11 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
+  if server.name == "vuels" then
+    local vuels_opts = require("kd.lsp.settings.vuels")
+    opts = vim.tbl_deep_extend("force", vuels_opts, opts)
+  end
+
   -- if server.name == "elmls" then
   --   local elmls_opts = require("kd.lsp.settings.elmls")
   --   opts = vim.tbl_deep_extend("force", elmls_opts, opts)

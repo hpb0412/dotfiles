@@ -27,8 +27,9 @@ configs.setup {
     enable = true,
     enable_autocmd = false,
   },
+  -- `autotag` is provided by `windwp/nvim-ts-autotag`
   autotag = {
     enable = true,
-  }
+  },
 }
 
