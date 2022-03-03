@@ -58,7 +58,13 @@ return packer.startup(function(use)
 			vim.g.did_load_filetypes = 1
 		end,
 	})
-	use("folke/which-key.nvim") -- suggest key binding
+	use({
+    "folke/which-key.nvim", -- suggest key binding
+    event = "VimEnter",
+    config = function()
+      require("kd.whichkey")
+    end,
+  })
 	use("antoinemadec/FixCursorHold.nvim") -- needed to fix lsp doc highlight
 	use({
 		"karb94/neoscroll.nvim", -- smooth scrolling when navigate
@@ -176,7 +182,7 @@ return packer.startup(function(use)
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim", -- Indent lines
-		event = "BufRead",
+		event = "BufReadPre",
 		config = function()
 			require("kd.indentline")
 		end,
@@ -207,10 +213,19 @@ return packer.startup(function(use)
 			require("kd.gitsigns")
 		end,
 	})
-	use("sindrets/diffview.nvim")
+	use({
+    "sindrets/diffview.nvim",
+    event="VimEnter",
+  })
 	use({
 		"f-person/git-blame.nvim",
 		event = "BufRead",
+    config = function()
+      vim.g.gitblame_ignored_filetypes = {
+        "packer",
+        "NvimTree"
+      }
+    end
 	})
 
 	------------------------
