@@ -41,6 +41,7 @@ nvim_tree.setup {
     "alpha",
   },
   auto_close = true,
+  auto_reload_on_write = true,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
