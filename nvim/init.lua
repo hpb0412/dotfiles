@@ -1,7 +1,6 @@
 require "kd.options"
 require "kd.keymaps"
 require "plugins"
-require "kd.colorscheme"
 require "kd.telescope"
 require "kd.nvim-tree"
 require "kd.toggleterm"
