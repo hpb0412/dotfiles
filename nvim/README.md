@@ -34,5 +34,7 @@ Here are they with my big thanks ❤️ for their sharing:
 [Github](https://github.com/LunarVim/Neovim-from-scratch)
 - [DevOnDuty](https://www.youtube.com/channel/UCFU7a7OMYfcpjtIpu2j47_Q)
 - [AstroVim](https://github.com/kabinspace/AstroVim)
+- [LunarVim](https://github.com/LunarVim/LunarVim)
+- [Neovim for Beginner](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a), [Github](https://github.com/alpha2phi/neovim-for-beginner)
 - Others 🙇
 
