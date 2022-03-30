@@ -55,13 +55,13 @@ vim.wo.colorcolumn = "99999"
 vim.opt.list = true
 -- some useful icons: »«■¬
 vim.opt.listchars:append({
-  -- space = '⋅',
-  -- eol = '↴',
-  tab = '»»',
-  trail = '■',
-  nbsp = '␣',
-  extends = '→',
-  precedes = '←'
+	-- space = '⋅',
+	-- eol = '↴',
+	tab = "»»",
+	trail = "■",
+	nbsp = "␣",
+	extends = "→",
+	precedes = "←",
 })
 
 indent_blankline.setup({
@@ -75,4 +75,3 @@ indent_blankline.setup({
 	--   "IndentBlanklineIndent3",
 	-- },
 })
-

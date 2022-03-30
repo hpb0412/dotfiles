@@ -50,11 +50,11 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	-- use "Shatur/neovim-ayu" -- Colorscheme
 	use({
-    "shaunsingh/nord.nvim", -- Colorscheme
-    config = function()
-      require("kd.colorscheme")
-    end
-  })
+		"shaunsingh/nord.nvim", -- Colorscheme
+		config = function()
+			require("kd.colorscheme")
+		end,
+	})
 	use("kyazdani42/nvim-web-devicons") -- font icons used in a lots of plugins
 	use("lewis6991/impatient.nvim") -- load optimizing
 	use({
@@ -64,16 +64,16 @@ return packer.startup(function(use)
 		end,
 	})
 	use({
-    "folke/which-key.nvim", -- suggest key binding
-    event = "VimEnter",
-    config = function()
-      require("kd.whichkey")
-    end,
-  })
+		"folke/which-key.nvim", -- suggest key binding
+		event = "VimEnter",
+		config = function()
+			require("kd.whichkey")
+		end,
+	})
 	use("antoinemadec/FixCursorHold.nvim") -- needed to fix lsp doc highlight
 	use({
 		"karb94/neoscroll.nvim", -- smooth scrolling when navigate
-		event = "BufRead",
+		event = "BufReadPre",
 		config = function()
 			require("kd.neoscroll")
 		end,
@@ -187,9 +187,11 @@ return packer.startup(function(use)
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim", -- Indent lines
-		event = "BufReadPre",
-		config = function()
-			require("kd.indentline")
+    after = "nvim-treesitter",
+    config = function()
+      require("kd.indentline")
+    end,
+		setup = function()
 		end,
 	})
 	use({
@@ -219,18 +221,15 @@ return packer.startup(function(use)
 		end,
 	})
 	use({
-    "sindrets/diffview.nvim",
-    event="VimEnter",
-  })
+		"sindrets/diffview.nvim",
+		event = "VimEnter",
+	})
 	use({
 		"f-person/git-blame.nvim",
 		event = "BufRead",
-    config = function()
-      vim.g.gitblame_ignored_filetypes = {
-        "packer",
-        "NvimTree"
-      }
-    end
+		setup = function()
+			require("kd/git-blame")
+		end,
 	})
 
 	------------------------
