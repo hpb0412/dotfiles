@@ -4,3 +4,4 @@ vim.bo.softtabstop = 2      -- number of columns when use Tab & BS action (edit 
 vim.bo.shiftwidth = 2       -- number of columns when use Shift / Indentation action (edit mode)
 vim.bo.autoindent = true
 vim.bo.textwidth = 120
+
