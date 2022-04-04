@@ -94,6 +94,11 @@ nvim_tree.setup {
     number = true,
     relativenumber = true,
   },
+  actions = {
+    open_file = {
+      resize_window = true,
+    }
+  },
   trash = {
     cmd = "trash",
     require_confirm = true,
