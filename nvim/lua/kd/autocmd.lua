@@ -6,8 +6,13 @@ vim.cmd [[
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
+    autocmd BufWinEnter *.* normal zR
   augroup end
 ]]
+
+-- since we use `foldexpr=nvim_treesitter#foldexpr()`
+-- we need event BufWinEnter instead of BufReadPost or FileReadPost
+-- autocmd BufReadPost,FileReadPost * normal zR
 
 -- augroup _git
 -- autocmd!
