@@ -90,7 +90,6 @@ local function lsp_highlight_document(client)
   end
 end
 
-
 --------------------------------------------
 -- Export items of this module are here --
 --------------------------------------------
@@ -107,7 +106,7 @@ if not status_ok then
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true -- for cssls and html
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M
-
