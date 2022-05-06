@@ -42,7 +42,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   auto_reload_on_write = true,
   disable_netrw = true,
-  hide_root_folder = false,
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
@@ -56,6 +55,7 @@ nvim_tree.setup {
     width = 42,
     height = 30,
     side = "left",
+    hide_root_folder = false,
     preserve_window_proportions = false,
     number = true,
     relativenumber = true,
