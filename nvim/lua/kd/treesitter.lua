@@ -1,6 +1,8 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-  ensure_installed = "maintained",
+  -- ensure_installed = "maintained",
+  -- no able to set `ensure_installed` with "maintained" anymore
+  -- use "*" or explicit list `{ "c", "lua", "rust" }`
   sync_install = false, 
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
@@ -31,5 +33,9 @@ configs.setup {
   autotag = {
     enable = true,
   },
+  -- `tree_docs` is provided by `nvim-treesitter/nvim-tree-docs`
+  tree_docs = {
+    enable = true,
+  }
 }
 

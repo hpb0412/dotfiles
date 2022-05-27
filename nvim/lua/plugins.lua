@@ -173,6 +173,7 @@ return packer.startup(function(use)
   use("p00f/nvim-ts-rainbow") -- make each pair diffent colors (rainbow)
   use("JoosepAlviste/nvim-ts-context-commentstring")
   use("windwp/nvim-ts-autotag") -- Autoclose tags
+  use('nvim-treesitter/nvim-tree-docs')
 
   -------------------------------------------
   -- Utils without depending on TreeSitter --
@@ -284,7 +285,7 @@ return packer.startup(function(use)
     setup = function()
       vim.g.glow_border = "rounded"
       vim.g.glow_width = 120
-      vim.g.glow_use_pager = true
+      vim.g.glow_use_pager = false
       vim.g.glow_style = "dark"
     end,
   })
