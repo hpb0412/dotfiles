@@ -23,7 +23,7 @@ lspconfig.tsserver.setup (opts)
 lspconfig.cssls.setup(opts)
 lspconfig.tailwindcss.setup(opts)
 lspconfig.html.setup(opts)
-lspconfig.vuels.setup(opts)
+lspconfig.volar.setup(opts)
 lspconfig.clangd.setup(opts)
 lspconfig.cmake.setup(opts)
 

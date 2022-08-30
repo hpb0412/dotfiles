@@ -49,7 +49,8 @@ end
 local function lsp_client_document_formatting(client)
 	-- turn of tsserver's formatter (to use prettier's formatter from null-ls)
 	-- similar for others
-	if client.name == "tsserver" or client.name == "sumneko_lua" or client.name == "html" then
+	if client.name == "tsserver" or client.name == "sumneko_lua"
+    or client.name == "html" or client.name == "volar" then
 		client.resolved_capabilities.document_formatting = false
 	end
 end
@@ -65,7 +66,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
