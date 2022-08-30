@@ -51,9 +51,9 @@ return packer.startup(function(use)
   -- use "Shatur/neovim-ayu" -- Colorscheme
   use({
     "shaunsingh/nord.nvim", -- Colorscheme
-    config = function()
-      require("kd.colorscheme")
-    end,
+    -- config = function()
+    --   require("kd.colorscheme")
+    -- end,
   })
   use("kyazdani42/nvim-web-devicons") -- font icons used in a lots of plugins
   use("lewis6991/impatient.nvim") -- load optimizing
@@ -130,16 +130,30 @@ return packer.startup(function(use)
   ------------------------------------------
 
   use({
-    "neovim/nvim-lspconfig", -- enable LSP
-    event = "BufRead",
-    config = function()
-      require("kd.lsp")
-    end,
+    "williamboman/mason.nvim",
+    {
+      "williamboman/mason-lspconfig.nvim",
+      after = "mason.nvim",
+    },
+    {
+      "neovim/nvim-lspconfig",
+      config = function()
+        require("kd.lsp")
+      end,
+      after = "mason-lspconfig.nvim",
+    }
   })
-  use({
-    "williamboman/nvim-lsp-installer",
-    event = "BufRead", -- simple to use language server installer
-  })
+  --[[ use({ ]]
+  --[[   event = "BufRead", ]]
+  --[[   config = function() ]]
+  --[[     require("kd.lsp") ]]
+  --[[   end, ]]
+  --[[   after = "mason-lspconfig.nvim", ]]
+  --[[ }) ]]
+  --[[ use({ ]]
+  --[[   "williamboman/nvim-lsp-installer", ]]
+  --[[   event = "BufRead", -- simple to use language server installer ]]
+  --[[ }) ]]
   use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 
   -------------
@@ -279,7 +293,7 @@ return packer.startup(function(use)
   })
 
   -- Markdown Preview
-  use ({ 
+  use({
     "ellisonleao/glow.nvim",
     branch = 'main',
     setup = function()

@@ -1,32 +1,3 @@
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_root_folder_modifier = ":t"
-vim.g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1,
-  folder_arrows = 1,
-}
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    -- unstaged = "",
-    -- staged = "S",
-    -- unmerged = "",
-    -- renamed = "➜",
-    -- deleted = "",
-    -- untracked = "U",
-    -- ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -70,6 +41,8 @@ nvim_tree.setup {
     },
   },
   renderer = {
+    highlight_git = true,
+    root_folder_modifier = ":t",
     indent_markers = {
       enable = true,
       icons = {
@@ -77,6 +50,39 @@ nvim_tree.setup {
         edge = "│ ",
         none = "  ",
       },
+    },
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+      symlink_arrow = " ➛ ",
+      glyphs = {
+        --[[ default = "", ]]
+        default = "",
+        symlink = "",
+        folder = {
+          --[[ arrow_closed = "", ]]
+          --[[ arrow_open = "", ]]
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+        git = {
+          -- unstaged = "",
+          -- staged = "S",
+          -- unmerged = "",
+          -- renamed = "➜",
+          -- untracked = "U",
+          -- deleted = "",
+          -- ignored = "◌",
+        },
+      }
     },
   },
   hijack_directories = {
@@ -151,9 +157,4 @@ nvim_tree.setup {
       profile = false,
     },
   },
-
-
-  
-  
 }
-

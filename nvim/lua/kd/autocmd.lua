@@ -7,6 +7,9 @@ vim.cmd [[
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd BufWinEnter *.* normal zR
+
+    " since there is no formatter for svg, we map svg to html
+    au BufReadPost *.svg set filetype=html
   augroup end
 ]]
 
