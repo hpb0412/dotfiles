@@ -76,6 +76,10 @@ keymap("n", "<leader><S-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
+-- REST --
+keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
+keymap("n", "<leader>rl", "<Plug>RestNvimLast", opts)
+keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
 
 ------------
 -- Insert --
