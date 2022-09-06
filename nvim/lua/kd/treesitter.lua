@@ -1,9 +1,13 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-  -- ensure_installed = "maintained",
-  -- no able to set `ensure_installed` with "maintained" anymore
-  -- use "*" or explicit list `{ "c", "lua", "rust" }`
-  sync_install = false, 
+  ensure_installed = {
+    "bash", "c", "cmake", "comment", "cpp", "css", "dockerfile", "dot", "gitignore","graphql",
+    "html", "javascript", "jsdoc", "json", "json5", "jsonc", "llvm","lua", "make",
+    "markdown", "markdown_inline", "php", "phpdoc", "python", "query", "ruby", "scss",
+    "sql", "svelte", "toml", "tsx", "typescript", "vim", "vue", "yaml",
+  },  -- A list of parser names, or "all"
+  auto_install = true,   -- Automatically install missing parsers when entering buffer
+  sync_install = false,   -- Install parsers synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
     enable = true,

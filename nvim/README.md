@@ -25,6 +25,10 @@ Since this configuaration target MacOS there are some notes for you if you want 
   - My current setup is `500ms` and it works very well for commenting stuff with my `gcc` key binding
   - But fastening it with `100ms` makes the commenting with `gcc` key binding not work anymore
 
+- Not all Treesitter's Parsers installed by default:
+  - I don't want to host unused stuff so I list out only parsers of the languages that I am using
+  - You should visit the `lua/kd/treesitter.lua` to remove the useless one and add the missing one
+
 ## Acknowledgement
 
 I am not myself figure out everything. Most of stuffs here are gather from internet.
@@ -36,5 +40,6 @@ Here are they with my big thanks ❤️ for their sharing:
 - [AstroVim](https://github.com/kabinspace/AstroVim)
 - [LunarVim](https://github.com/LunarVim/LunarVim)
 - [Neovim for Beginner](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a), [Github](https://github.com/alpha2phi/neovim-for-beginner)
+- [Devaslife's config](https://www.youtube.com/watch?v=ajmK0ZNcM4Q)
 - Others 🙇
 
