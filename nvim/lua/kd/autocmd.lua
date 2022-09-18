@@ -8,8 +8,13 @@ vim.cmd [[
     autocmd FileType qf set nobuflisted
     autocmd BufWinEnter *.* normal zR
 
+  augroup end
+
+  augroup _language_settings
+
     " since there is no formatter for svg, we map svg to html
     au BufReadPost *.svg set filetype=html
+    au BufReadPost */php/*.conf set filetype=dosini
   augroup end
 ]]
 

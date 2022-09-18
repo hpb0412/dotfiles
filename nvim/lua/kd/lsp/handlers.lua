@@ -49,7 +49,7 @@ end
 local function lsp_client_document_formatting(client)
 	-- turn of tsserver's formatter (to use prettier's formatter from null-ls)
 	-- similar for others
-	if client.name == "tsserver" or client.name == "sumneko_lua"
+	if client.name == "tsserver" or client.name == "sumneko_lua" or client.name == "jsonls"
     or client.name == "html" or client.name == "volar" then
 		client.resolved_capabilities.document_formatting = false
 	end
@@ -108,7 +108,7 @@ if not status_ok then
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true -- for cssls and html
+capabilities.textDocument.completion.completionItem.snippetSupport = true -- for cssls and html and jsonls
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M
