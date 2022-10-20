@@ -51,9 +51,9 @@ return packer.startup(function(use)
   -- use "Shatur/neovim-ayu" -- Colorscheme
   use({
     "shaunsingh/nord.nvim", -- Colorscheme
-    -- config = function()
-    --   require("kd.colorscheme")
-    -- end,
+    commit = "78f5f001709b5b321a35dcdc44549ef93185e024",
+    --[[ config = function() ]]
+    --[[ end, ]]
   })
   use("kyazdani42/nvim-web-devicons") -- font icons used in a lots of plugins
   use("lewis6991/impatient.nvim") -- load optimizing
