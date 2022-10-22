@@ -255,6 +255,7 @@ return packer.startup(function(use)
   -- Open Files Tablist
   use({
     "akinsho/bufferline.nvim",
+    tag = "v3.*",
     event = "BufRead",
     after = "nvim-web-devicons",
     config = function()
