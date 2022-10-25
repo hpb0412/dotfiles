@@ -43,3 +43,7 @@ Here are they with my big thanks ❤️ for their sharing:
 - [Devaslife's config](https://www.youtube.com/watch?v=ajmK0ZNcM4Q)
 - Others 🙇
 
+## Resources
+
+- [This is where you should check if something is marked as `deprecated`](https://neovim.io/doc/user/deprecated.html)
+
