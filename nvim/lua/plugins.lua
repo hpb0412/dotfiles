@@ -54,6 +54,11 @@ return packer.startup(function(use)
     commit = "78f5f001709b5b321a35dcdc44549ef93185e024",
   })
 
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin",
+  })
+
   use("kyazdani42/nvim-web-devicons") -- font icons used in a lots of plugins
   use("lewis6991/impatient.nvim") -- load optimizing
   use({
