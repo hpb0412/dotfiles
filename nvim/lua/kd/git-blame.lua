@@ -2,6 +2,7 @@ vim.g.gitblame_ignored_filetypes = {
 	"packer",
 	"NvimTree",
 	"DiffviewFileHistory",
+	"Outline",
 }
 
 vim.g.gitblame_message_template = " <author> • <date> • <summary>"

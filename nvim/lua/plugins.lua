@@ -52,9 +52,8 @@ return packer.startup(function(use)
   use({
     "shaunsingh/nord.nvim", -- Colorscheme
     commit = "78f5f001709b5b321a35dcdc44549ef93185e024",
-    --[[ config = function() ]]
-    --[[ end, ]]
   })
+
   use("kyazdani42/nvim-web-devicons") -- font icons used in a lots of plugins
   use("lewis6991/impatient.nvim") -- load optimizing
   use({
@@ -285,13 +284,7 @@ return packer.startup(function(use)
   -- Dashboard
   use("goolord/alpha-nvim")
 
-  use({
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    setup = function()
-      require("kd.symbols-outline")
-    end,
-  })
+  use("simrat39/symbols-outline.nvim")
 
   -- Markdown Preview
   use({

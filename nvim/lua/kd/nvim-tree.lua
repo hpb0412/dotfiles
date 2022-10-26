@@ -25,7 +25,7 @@ nvim_tree.setup {
   view = {
     width = 42,
     --[[ height = 30, ]]
-    side = "left",
+    side = "right",
     hide_root_folder = false,
     preserve_window_proportions = false,
     number = true,
@@ -136,7 +136,7 @@ nvim_tree.setup {
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", "Outline" },
           buftype = { "terminal", "help" },
         },
       },
