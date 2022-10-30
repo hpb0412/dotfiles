@@ -64,8 +64,8 @@ nvim_tree.setup({
 				default = "",
 				symlink = "",
 				folder = {
-					--[[ arrow_closed = "", ]]
-					--[[ arrow_open = "", ]]
+					arrow_closed = "❯",
+					arrow_open = "",
 					default = "",
 					open = "",
 					empty = "",
