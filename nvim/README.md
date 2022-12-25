@@ -41,6 +41,7 @@ Here are they with my big thanks ❤️ for their sharing:
 - [LunarVim](https://github.com/LunarVim/LunarVim)
 - [Neovim for Beginner](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a), [Github](https://github.com/alpha2phi/neovim-for-beginner)
 - [Devaslife's config](https://www.youtube.com/watch?v=ajmK0ZNcM4Q)
+- [Neovim Kickstart](https://www.youtube.com/watch?v=stqUbv-5u2s)
 - Others 🙇
 
 ## Resources

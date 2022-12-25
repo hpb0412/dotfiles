@@ -11,15 +11,16 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "https://github.com/wbthomason/packer.nvim",
     install_path,
   })
-  print("Installing packer close and reopen Neovim...")
+  print("Installing packer, close and reopen Neovim...")
   vim.cmd([[packadd packer.nvim]])
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Automatically source and re-compile whenever you save the plugins.lua file
+-- If you want auto re-load, use PackerSync
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
 
@@ -147,17 +148,6 @@ return packer.startup(function(use)
       after = "mason-lspconfig.nvim",
     }
   })
-  --[[ use({ ]]
-  --[[   event = "BufRead", ]]
-  --[[   config = function() ]]
-  --[[     require("kd.lsp") ]]
-  --[[   end, ]]
-  --[[   after = "mason-lspconfig.nvim", ]]
-  --[[ }) ]]
-  --[[ use({ ]]
-  --[[   "williamboman/nvim-lsp-installer", ]]
-  --[[   event = "BufRead", -- simple to use language server installer ]]
-  --[[ }) ]]
   use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 
   -------------

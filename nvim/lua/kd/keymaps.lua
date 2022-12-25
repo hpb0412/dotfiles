@@ -39,10 +39,6 @@ keymap("n", "<Up>", "<NOP>", opts)
 keymap("n", "<Down>", "<NOP>", opts)
 keymap("n", "<Left>", "<NOP>", opts)
 keymap("n", "<Right>", "<NOP>", opts)
--- keymap("n", "j", "<NOP>", opts)
--- keymap("n", "k", "<NOP>", opts)
--- keymap("n", "h", "<NOP>", opts)
--- keymap("n", "l", "<NOP>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -121,8 +117,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Better terminal navigation
 -- we move these key binding into `toggleterm` module
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
