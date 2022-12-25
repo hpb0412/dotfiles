@@ -21,14 +21,12 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-
 -----------
 -- Notes --
 -----------
 
 -- Map Options key on MacOs
 -- https://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim#answer-15399297
-
 
 ------------
 -- Normal --
@@ -66,11 +64,21 @@ keymap("n", "˚", ":m-2<CR>==", opts) -- on Mac <A-k> is ˚
 keymap("n", "∆", ":m+1<CR>==", opts) -- on Mac <A-j> is ∆
 
 -- Telescope --
-keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>p", "<cmd>Telescope projects<cr>", opts)
-keymap("n", "<leader><S-f>", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", opts)
+keymap("n", "<leader><space>", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>sd", "<cmd>Telescope diagnostics<cr>", opts)
+keymap(
+	"n",
+	"<leader>sf",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
+)
+keymap("n", "<leader>s<S-f>", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
+keymap("n", "<leader>sp", "<cmd>Telescope projects<cr>", opts)
+keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", opts)
 
 -- REST --
 keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
@@ -85,7 +93,6 @@ keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
 keymap("i", "˚", "<Esc>:m .-2<CR>==gi", opts) -- on Mac <A-k> is ˚
 keymap("i", "∆", "<Esc>:m .+1<CR>==gi", opts) -- on Mac <A-j> is ∆
 
-
 ------------
 -- Visual --
 ------------
@@ -99,7 +106,6 @@ keymap("v", "˚", ":m '<-2<CR>gv=gv", opts) -- on Mac <A-k> is ˚
 keymap("v", "∆", ":m '>+1<CR>gv=gv", opts) -- on Mac <A-j> is ∆
 -- keymap("v", "p", '"_dP', opts)
 
-
 ------------------
 -- Visual Block --
 ------------------
@@ -109,7 +115,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
 
 --------------
 -- Terminal --
@@ -121,4 +126,3 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
