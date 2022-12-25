@@ -14,6 +14,8 @@ vim.cmd [[
 
     " since there is no formatter for svg, we map svg to html
     au BufReadPost *.svg set filetype=html
+    au BufReadPost *.json set filetype=jsonc
+    au BufReadPost package.json set filetype=json
     au BufReadPost */php/*.conf set filetype=dosini
   augroup end
 ]]
