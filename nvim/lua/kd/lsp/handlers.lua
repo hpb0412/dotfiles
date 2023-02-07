@@ -47,12 +47,12 @@ end
 -----------------------------
 
 local function lsp_client_document_formatting(client)
-	-- turn of tsserver's formatter (to use prettier's formatter from null-ls)
+	-- turn off tsserver's formatter (to use prettier's formatter from null-ls)
 	-- similar for others
 	if
-		client.name == "tsserver"
-		or client.name == "sumneko_lua"
-		or client.name == "jsonls"
+		-- client.name == "tsserver"
+		-- or client.name == "sumneko_lua"
+		client.name == "jsonls"
 		or client.name == "html"
 		or client.name == "volar"
 	then
