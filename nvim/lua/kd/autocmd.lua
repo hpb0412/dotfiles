@@ -7,6 +7,7 @@ vim.cmd [[
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd BufWinEnter *.* normal zR
+    autocmd VimEnter * silent!lua require("nvim-tree.api").tree.open()
 
   augroup end
 
