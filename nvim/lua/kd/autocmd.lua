@@ -1,3 +1,4 @@
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 -- autocmd! remove all autocommands, if entered under a group it will clear that group
 vim.cmd [[
   augroup _general_settings
@@ -7,7 +8,6 @@ vim.cmd [[
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd BufWinEnter *.* normal zR
-    autocmd VimEnter * silent!lua require("nvim-tree.api").tree.open()
 
   augroup end
 

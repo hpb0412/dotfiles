@@ -1,3 +1,33 @@
+-- Thisfunction will be called at autocmd.lua
+function open_nvim_tree(data)
+  local IGNORED_FT = {
+		"startify",
+		"dashboard",
+		"alpha",
+  }
+  -- buffer is a real file on the disk
+  --[[ local real_file = vim.fn.filereadable(data.file) == 1 ]]
+
+  -- buffer is a [No Name]
+  --[[ local no_name = data.file == "" and vim.bo[data.buf].buftype == "" ]]
+
+  -- only files please
+  --[[ if not real_file and not no_name then ]]
+  --[[   return ]]
+  --[[ end ]]
+
+  -- &ft
+  local filetype = vim.bo[data.buf].ft
+
+  -- skip ignored filetypes
+  if vim.tbl_contains(IGNORED_FT, filetype) then
+    return
+  end
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
 	return
@@ -90,11 +120,6 @@ nvim_tree.setup({
 		enable = true,
 		update_root = true, -- previousely update_cwd
 		ignore_list = {},
-	},
-	ignore_ft_on_setup = {
-		"startify",
-		"dashboard",
-		"alpha",
 	},
 	system_open = {
 		cmd = nil,
