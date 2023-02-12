@@ -51,7 +51,6 @@ local function lsp_client_document_formatting(client)
 	-- similar for others
 	if
 		-- client.name == "tsserver"
-		-- or client.name == "sumneko_lua"
 		client.name == "jsonls"
 		or client.name == "html"
 		or client.name == "volar"
