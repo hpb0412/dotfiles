@@ -16,6 +16,7 @@ local opts = {
 local jsonls_opts = require("kd.lsp.settings.jsonls")
 lspconfig.jsonls.setup(vim.tbl_deep_extend("force", jsonls_opts, opts))
 
+lspconfig.astro.setup(opts)
 lspconfig.clangd.setup(opts)
 lspconfig.cmake.setup(opts)
 lspconfig.cssls.setup(opts)
