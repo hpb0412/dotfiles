@@ -13,23 +13,18 @@ local opts = {
   capabilities = handlers.capabilities,
 }
 
+local astro_opts = require("kd.lsp.settings.astro")
 local jsonls_opts = require("kd.lsp.settings.jsonls")
-lspconfig.jsonls.setup(vim.tbl_deep_extend("force", jsonls_opts, opts))
+local lua_ls_opts = require("kd.lsp.settings.lua_ls")
 
-lspconfig.astro.setup(vim.tbl_deep_extend("force", {
-  init_options = {
-    typescript = {
-      serverPath = "~/.local/share/nvim/mason/packages/astro-language-server/node_modules/typescript/lib/tsserverlibrary.js"
-    }
-  }
-}, opts))
+lspconfig.astro.setup(vim.tbl_deep_extend("force", astro_opts, opts))
 lspconfig.clangd.setup(opts)
 lspconfig.cmake.setup(opts)
 lspconfig.cssls.setup(opts)
 lspconfig.gopls.setup(opts)
 lspconfig.html.setup(opts)
-lspconfig.jsonls.setup(opts)
-lspconfig.lua_ls.setup(opts)
+lspconfig.jsonls.setup(vim.tbl_deep_extend("force", jsonls_opts, opts))
+lspconfig.lua_ls.setup(vim.tbl_deep_extend("force", lua_ls_opts, opts))
 lspconfig.tailwindcss.setup(opts)
 lspconfig.tsserver.setup(opts)
 lspconfig.volar.setup(opts)
