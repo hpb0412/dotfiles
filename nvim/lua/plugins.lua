@@ -299,6 +299,13 @@ return packer.startup(function(use)
     end
   }
 
+  use {
+    'codota/tabnine-nvim',
+    run = "./dl_binaries.sh",
+    config = function()
+      require("kd.tabnine")
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
