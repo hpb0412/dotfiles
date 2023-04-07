@@ -44,11 +44,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Open TreeView
--- keymap("n", "<leader>e", ":Lex 30<CR>", opts)
--- keymap("n", "<leader>e", ":NeoTreeShowToggle<CR>", opts)
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
 -- Resize with arrows
 keymap("n", "<A-Up>", ":resize -2<CR>", opts)
 keymap("n", "<A-Down>", ":resize +2<CR>", opts)
@@ -62,23 +57,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Move text up and down
 keymap("n", "˚", ":m-2<CR>==", opts) -- on Mac <A-k> is ˚
 keymap("n", "∆", ":m+1<CR>==", opts) -- on Mac <A-j> is ∆
-
--- Telescope --
-keymap("n", "<leader>?", "<cmd>Telescope oldfiles<cr>", opts)
-keymap("n", "<leader><space>", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>sd", "<cmd>Telescope diagnostics<cr>", opts)
-keymap(
-	"n",
-	"<leader>sf",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
-keymap("n", "<leader>s<S-f>", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
-keymap("n", "<leader>sp", "<cmd>Telescope projects<cr>", opts)
-keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", opts)
 
 -- REST --
 keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
@@ -122,7 +100,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Better terminal navigation
 -- we move these key binding into `toggleterm` module
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
