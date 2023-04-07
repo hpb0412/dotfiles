@@ -47,8 +47,8 @@ return packer.startup(function(use)
   ------------------
 
   use("wbthomason/packer.nvim") -- Have packer manage itself
-  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+  use("nvim-lua/popup.nvim")    -- An implementation of the Popup API from vim in Neovim
+  use("nvim-lua/plenary.nvim")  -- Useful lua functions used ny lots of plugins
   -- use "Shatur/neovim-ayu" -- Colorscheme
   use({
     "shaunsingh/nord.nvim", -- Colorscheme
@@ -61,9 +61,9 @@ return packer.startup(function(use)
   })
 
   use("kyazdani42/nvim-web-devicons") -- font icons used in a lots of plugins
-  use("lewis6991/impatient.nvim") -- load optimizing
+  use("lewis6991/impatient.nvim")     -- load optimizing
   use({
-    "nathom/filetype.nvim", -- better filetype => faster booting
+    "nathom/filetype.nvim",           -- better filetype => faster booting
     setup = function()
       vim.g.did_load_filetypes = 1
     end,
@@ -77,7 +77,7 @@ return packer.startup(function(use)
   })
   use("antoinemadec/FixCursorHold.nvim") -- needed to fix lsp doc highlight
   use({
-    "karb94/neoscroll.nvim", -- smooth scrolling when navigate
+    "karb94/neoscroll.nvim",             -- smooth scrolling when navigate
     event = "BufReadPre",
     config = function()
       require("kd.neoscroll")
@@ -178,7 +178,7 @@ return packer.startup(function(use)
       require("kd.treesitter")
     end,
   })
-  use("p00f/nvim-ts-rainbow") -- make each pair diffent colors (rainbow)
+  use("p00f/nvim-ts-rainbow")   -- make each pair diffent colors (rainbow)
   use("JoosepAlviste/nvim-ts-context-commentstring")
   use("windwp/nvim-ts-autotag") -- Autoclose tags
   use('nvim-treesitter/nvim-tree-docs')
