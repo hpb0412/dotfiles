@@ -1,5 +1,3 @@
-local fn = vim.fn
-
 -- Automatically install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -27,8 +25,8 @@ return lazy.setup {
   -- Base plugins --
   ------------------
 
-  "nvim-lua/popup.nvim",    -- An implementation of the Popup API from vim in Neovim
-  "nvim-lua/plenary.nvim",  -- Useful lua functions used ny lots of plugins
+  "nvim-lua/popup.nvim",   -- An implementation of the Popup API from vim in Neovim
+  "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
   -- use "Shatur/neovim-ayu" -- Colorscheme
   -- {
   --   "shaunsingh/nord.nvim", -- Colorscheme
