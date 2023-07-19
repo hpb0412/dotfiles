@@ -16,6 +16,7 @@ local opts = {
 local astro_opts = require("lsp.settings.astro")
 local jsonls_opts = require("lsp.settings.jsonls")
 local lua_ls_opts = require("lsp.settings.lua_ls")
+local volar_opts = require("lsp.settings.volar")
 
 lspconfig.astro.setup(vim.tbl_deep_extend("force", astro_opts, opts))
 lspconfig.clangd.setup(opts)
@@ -28,4 +29,4 @@ lspconfig.lua_ls.setup(vim.tbl_deep_extend("force", lua_ls_opts, opts))
 lspconfig.prismals.setup(opts)
 lspconfig.tailwindcss.setup(opts)
 lspconfig.tsserver.setup(opts)
-lspconfig.volar.setup(opts)
+lspconfig.volar.setup(vim.tbl_deep_extend("force", volar_opts, opts))
