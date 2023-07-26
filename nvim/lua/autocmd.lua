@@ -1,4 +1,3 @@
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = Open_Nvim_Tree })
 -- autocmd! remove all autocommands, if entered under a group it will clear that group
 vim.cmd [[
   augroup _general_settings

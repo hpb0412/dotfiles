@@ -1,34 +1,20 @@
--- Thisfunction will be called at autocmd.lua
-function Open_Nvim_Tree(data)
-  local IGNORED_FT = {
-    "startify",
-    "dashboard",
-    "alpha",
-  }
-  -- buffer is a real file on the disk
-  --[[ local real_file = vim.fn.filereadable(data.file) == 1 ]]
-  -- buffer is a [No Name]
-  --[[ local no_name = data.file == "" and vim.bo[data.buf].buftype == "" ]]
-  -- only files please
-  --[[ if not real_file and not no_name then ]]
-  --[[   return ]]
-  --[[ end ]]
-  -- &ft
-  local filetype = vim.bo[data.buf].ft
+local function my_on_attach(bufnr)
+  local api = require "nvim-tree.api"
 
-  -- skip ignored filetypes
-  if vim.tbl_contains(IGNORED_FT, filetype) then
-    return
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
-  -- open the tree
-  local status_ok, nvim_tree_api = pcall(require, "nvim-tree.api")
-  if not status_ok then
-    vim.print "nvim-tree.api not found!"
-    return
-  end
+  -- default mappings
+  api.config.mappings.default_on_attach(bufnr)
 
-  nvim_tree_api.tree.open()
+  -- custom mappings (migrated from view.mappings.list)
+  -- vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
+  -- vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  -- vim.keymap.set('n', 'v', api.tree.vsplit, opts('VSplit'))
+  -- vim.keymap.set('n', 'V', api.tree.split, opts('Split'))
 end
 
 return {
@@ -39,14 +25,8 @@ return {
       return
     end
 
-    local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-    if not config_status_ok then
-      return
-    end
-
-    local tree_cb = nvim_tree_config.nvim_tree_callback
-
     nvim_tree.setup({
+      on_attach = my_on_attach,
       auto_reload_on_write = true,
       disable_netrw = true,
       hijack_cursor = false,
@@ -64,14 +44,6 @@ return {
         number = true,
         relativenumber = true,
         signcolumn = "yes",
-        mappings = {
-          custom_only = false,
-          list = {
-            { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-            { key = "h",                  cb = tree_cb("close_node") },
-            { key = "v",                  cb = tree_cb("vsplit") },
-          },
-        },
       },
       renderer = {
         highlight_git = true,
