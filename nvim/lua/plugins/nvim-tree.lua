@@ -39,7 +39,6 @@ return {
         width = 42,
         --[[ height = 30, ]]
         side = "right",
-        hide_root_folder = false,
         preserve_window_proportions = false,
         number = true,
         relativenumber = true,
@@ -48,6 +47,7 @@ return {
       renderer = {
         highlight_git = true,
         root_folder_modifier = ":t",
+        -- root_folder_label = false,
         indent_markers = {
           enable = true,
           icons = {

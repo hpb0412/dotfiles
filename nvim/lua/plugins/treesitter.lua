@@ -31,11 +31,6 @@ return {
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
       },
-      -- context_commentstring is provided by `JoosepAlviste/nvim-ts-context-commentstring`
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
       -- `autotag` is provided by `windwp/nvim-ts-autotag`
       autotag = {
         enable = true,
