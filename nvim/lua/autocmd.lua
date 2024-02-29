@@ -17,7 +17,7 @@ vim.cmd [[
     au BufReadPost *.json set filetype=jsonc
     au BufReadPost package.json set filetype=json
     au BufReadPost */php/*.conf set filetype=dosini
-    au BufReadPost .env* set filetype=sh
+    au BufReadPost *.env* set filetype=sh
     au BufReadPost *.hurl set filetype=hurl
   augroup end
 ]]
