@@ -115,8 +115,9 @@ return {
     -- some useful icons: »«■¬
     vim.opt.listchars:append({
       -- space = '⋅',
-      -- eol = '↴',
-      tab = "»»",
+      -- eol = "↴",
+      -- tab = "»»",
+      tab = "⇥ ", -- tab requires 2 characters to function
       trail = "■",
       nbsp = "␣",
       extends = "→",
