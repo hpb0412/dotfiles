@@ -5,6 +5,8 @@ if not status_ok then
   return
 end
 
+local root_pattern = require('lspconfig.util').root_pattern
+
 local handlers = require("lsp.handlers")
 handlers.setup()
 
@@ -28,7 +30,14 @@ lspconfig.gopls.setup(opts)
 lspconfig.html.setup(opts)
 lspconfig.jsonls.setup(vim.tbl_deep_extend("force", jsonls_opts, opts))
 lspconfig.lua_ls.setup(vim.tbl_deep_extend("force", lua_ls_opts, opts))
-lspconfig.ols.setup(opts)
+-- Temporarily use local `ols` instead of the one from Mason
+lspconfig.ols.setup(vim.tbl_deep_extend("force", {
+  cmd = { vim.fn.expand("~/ols/ols") },
+  filetypes = { "odin" },
+  rootdir = {
+    root_pattern("ols.json", ".git", "*.odin")
+  }
+}, opts))
 lspconfig.prismals.setup(opts)
 lspconfig.tailwindcss.setup(opts)
 lspconfig.tsserver.setup(opts)
