@@ -5,9 +5,9 @@ return {
     local configs = require("nvim-treesitter.configs")
     configs.setup {
       ensure_installed = {
-        "bash", "c", "cmake", "comment", "cpp", "css", "dockerfile", "dot", "gitignore", "graphql",
+        "bash", "c", "cmake", "cpp", "css", "dockerfile", "dot", "gitignore", "graphql",
         "html", "javascript", "jsdoc", "json", "json5", "jsonc", "llvm", "lua", "make",
-        "markdown", "markdown_inline", "php", "phpdoc", "python", "query", "ruby", "scss",
+        "markdown", "markdown_inline", "php", "phpdoc", "odin", "python", "query", "ruby", "scss",
         "sql", "svelte", "toml", "tsx", "typescript", "vim", "vue", "yaml",
       },                       -- A list of parser names, or "all"
       auto_install = true,     -- Automatically install missing parsers when entering buffer
