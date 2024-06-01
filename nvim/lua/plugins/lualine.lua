@@ -78,9 +78,9 @@ return {
         always_divide_middle = true,
       },
       sections = {
-        lualine_a = { mode },
+        lualine_a = { "mode" },
         lualine_b = { branch  },
-        lualine_c = { diff, 'buffers' },
+        lualine_c = { 'buffers', diff },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diagnostics, spaces, "encoding", filetype },
         lualine_y = { location },
