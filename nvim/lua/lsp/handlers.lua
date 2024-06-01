@@ -76,11 +76,30 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   --[[ keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) ]]
   keymap(bufnr, "n", "ff", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
 
-local function lsp_highlight_document(client)
-  -- Set autocommands conditional on server_capabilities
+local function lsp_highlight_document(client, bufnr)
+  -- For neovim 0.7+
+  -- Server capabilities spec:
+  -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#serverCapabilities
+  if client.server_capabilities.documentHighlightProvider then
+    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
+    vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
+    vim.api.nvim_create_autocmd("CursorHold", {
+      callback = vim.lsp.buf.document_highlight,
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      desc = "Document Highlight",
+    })
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      callback = vim.lsp.buf.clear_references,
+      buffer = bufnr,
+      group = "lsp_document_highlight",
+      desc = "Clear All the References",
+    })
+  end
+
+  -- For neovim < 0.7
   if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
@@ -99,10 +118,13 @@ end
 -- Export items of this module are here --
 --------------------------------------------
 
+-- create `Format` command that will be used later in `lsp_keymaps(...)`
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
+
 M.on_attach = function(client, bufnr)
   lsp_client_document_formatting(client)
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
+  lsp_highlight_document(client, bufnr)
 end
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
