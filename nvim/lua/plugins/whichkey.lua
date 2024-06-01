@@ -110,11 +110,6 @@ return {
       },
       h = { "<cmd>nohlsearch<CR>", "No Highlight" },
       q = { "<cmd>q!<CR>", "Quit" },
-      r = {
-        name = "REST",
-        r = { "<Plug>RestNvim", "Run request under the cursor" },
-        l = { "<Plug>RestNvimLast", "Re-run last request" },
-      },
       s = {
         name = "Search",
         B = { "<cmd>Telescope buffers<cr>", "Find Openning Buffers" },

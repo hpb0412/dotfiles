@@ -107,6 +107,7 @@ local function lsp_highlight_document(client, bufnr)
 
   -- For neovim < 0.7
   if client.server_capabilities.document_highlight then
+    ---@diagnostic disable: deprecated
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight

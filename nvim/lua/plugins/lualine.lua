@@ -27,6 +27,7 @@ return {
       cond = hide_in_width
     }
 
+    ---@diagnostic disable: unused-local
     local mode = {
       "mode",
       fmt = function(str)
@@ -52,6 +53,7 @@ return {
     }
 
     -- cool function for progress
+    ---@diagnostic disable: unused-function
     local progress = function()
       local current_line = vim.fn.line(".")
       local total_lines = vim.fn.line("$")
@@ -63,7 +65,7 @@ return {
     end
 
     local spaces = function()
-      return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+      return "spaces: " .. vim.api.nvim_get_option_value("shiftwidth", {})
     end
 
     lualine.setup({
@@ -80,7 +82,7 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = { branch  },
-        lualine_c = { 'buffers', diff },
+        lualine_c = { "filename", diff },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diagnostics, spaces, "encoding", filetype },
         lualine_y = { location },
