@@ -17,8 +17,8 @@ return {
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-          operators = false,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
-          motions = false,      -- adds help for motions
+          operators = true,    -- adds help for operators like d, y, ... and registers them for motion / text object completion
+          motions = true,      -- adds help for motions
           text_objects = false, -- help for text objects triggered after entering an operator
           windows = true,       -- default bindings on <c-w>
           nav = true,           -- misc bindings to work with windows
@@ -28,7 +28,10 @@ return {
       },
       -- add operators that will trigger motion and text object completion
       -- to enable all native operators, set the preset / operators plugin above
-      -- operators = { gc = "Comments" },
+      operators = {
+        gc = "Line Comments",
+        gb = "Block Comments",
+      },
       key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
@@ -89,20 +92,8 @@ return {
       },
       c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
       e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-      w = { "<cmd>w!<CR>", "Save" },
-      q = { "<cmd>q!<CR>", "Quit" },
-      h = { "<cmd>nohlsearch<CR>", "No Highlight" },
-      P = { "<cmd>Telescope projects<cr>", "Projects" },
-      -- p = {
-      --   name = "Packer",
-      --   c = { "<cmd>PackerCompile<cr>", "Compile" },
-      --   i = { "<cmd>PackerInstall<cr>", "Install" },
-      --   s = { "<cmd>PackerSync<cr>", "Sync" },
-      --   S = { "<cmd>PackerStatus<cr>", "Status" },
-      --   u = { "<cmd>PackerUpdate<cr>", "Update" },
-      -- },
       g = {
-        name = "Git",
+        name = "Git stuff",
         g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
         j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -111,67 +102,39 @@ return {
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
         R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
         s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-        u = {
-          "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-          "Undo Stage Hunk",
-        },
+        u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
         o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-        d = {
-          "<cmd>Gitsigns diffthis HEAD<cr>",
-          "Diff",
-        },
+        d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
       },
-      l = {
-        name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        d = {
-          "<cmd>Telescope lsp_document_diagnostics<cr>",
-          "Document Diagnostics",
-        },
-        w = {
-          "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-          "Workspace Diagnostics",
-        },
-        f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-        i = { "<cmd>LspInfo<cr>", "Info" },
-        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = {
-          "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-          "Next Diagnostic",
-        },
-        k = {
-          "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-          "Prev Diagnostic",
-        },
-        l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        -- S = {
-        --   "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-        --   "Workspace Symbols",
-        -- },
+      h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+      q = { "<cmd>q!<CR>", "Quit" },
+      r = {
+        name = "REST",
+        r = { "<Plug>RestNvim", "Run request under the cursor" },
+        l = { "<Plug>RestNvimLast", "Re-run last request" },
       },
       s = {
         name = "Search",
+        B = { "<cmd>Telescope buffers<cr>", "Find Openning Buffers" },
         b = { "<cmd>Telescope git_branches<cr>", "Find Git Branch" },
-        B = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
+        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         d = { "<cmd>Telescope diagnostics<cr>", "Find Diagnostics" },
+        F = { "<cmd>Telescope find_files<cr>", "Find Files" },
         f = {
           "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
           "Find files" },
-        F = { "<cmd>Telescope find_files<cr>", "Find Files" },
         g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        k = { "<cmd>Telescope keymaps<cr>" },
+        k = { "<cmd>Telescope keymaps<cr>", "Find Key Mappings" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         p = { "<cmd>Telescope projects<cr>", "Find Projects" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Find Workspace Symbols" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find Document Symbols" },
         w = { "<cmd>Telescope grep_string<cr>", "Grep String" },
       },
       t = {
@@ -180,6 +143,7 @@ return {
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
       },
+      w = { "<cmd>w!<CR>", "Save" },
     }
 
     local vopts = {

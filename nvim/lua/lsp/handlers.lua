@@ -62,6 +62,9 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_buf_set_keymap
 
+  -- lsp buffer
+  keymap(bufnr, "n", "ff", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+  keymap(bufnr, "n", "gca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
@@ -69,13 +72,16 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "grn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  keymap(bufnr, "n", "gca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
+  -- code lens
+  keymap(bufnr, "n", "gcl", "<cmd>lua vim.lsp.codelens.run()<CR>", opts)
+
+  -- diagnostics
   keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
+  keymap(bufnr, "n", "gq", '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts) -- Quickfix
   keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   --[[ keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) ]]
-  keymap(bufnr, "n", "ff", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
 end
 
 local function lsp_highlight_document(client, bufnr)
