@@ -139,7 +139,6 @@ return {
         t = { "<cmd>ToggleTerm direction=tab<cr>", "New Term in Tab" },
         v = { "<cmd>ToggleTerm size=100 direction=vertical<cr>", "New Vertical Term" },
       },
-      w = { "<cmd>w!<CR>", "Save" },
     }
 
     local vopts = {
