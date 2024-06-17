@@ -1,18 +1,25 @@
 return {
-  "f-person/git-blame.nvim",
-  init = function()
-    vim.g.gitblame_ignored_filetypes = {
-      "packer",
-      "NvimTree",
-      "DiffviewFileHistory",
-      "Outline",
-    }
+    "f-person/git-blame.nvim",
+    config = function()
+        local status_ok, gitblame = pcall(require, "gitblame")
+        if not status_ok then
+            return
+        end
 
-    vim.g.gitblame_message_template = " <author> • <date> • <summary>"
-    vim.g.gitblame_date_format = "%c"
-    vim.g.gitblame_highlight_group = "Comment"
-    vim.g.gitblame_display_virtual_text = 1
-    -- vim.g.itblame_ignored_filetypes = { "lua", "c" }
-    vim.g.gitblame_enabled = 1
-  end
+        gitblame.setup {
+            ignored_filetypes = {
+                "packer",
+                "NvimTree",
+                "DiffviewFileHistory",
+                "Outline",
+            },
+
+            message_template = " <author> • <date> • <summary>",
+            date_format = "%c",
+            highlight_group = "Comment",
+            display_virtual_text = 1,
+            -- ignored_filetypes = { "lua", "c" }
+            enabled = 1,
+        }
+    end
 }

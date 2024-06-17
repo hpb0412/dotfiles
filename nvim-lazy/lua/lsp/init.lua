@@ -16,7 +16,7 @@ local opts = {
 }
 
 local astro_opts = require("lsp.settings.astro")
-local jsonls_opts = require("lsp.settings.jsonls")
+-- local jsonls_opts = require("lsp.settings.jsonls")
 local lua_ls_opts = require("lsp.settings.lua_ls")
 local volar_opts = require("lsp.settings.volar")
 
@@ -28,7 +28,7 @@ lspconfig.elmls.setup(opts)
 lspconfig.gleam.setup(opts)
 lspconfig.gopls.setup(opts)
 lspconfig.html.setup(opts)
-lspconfig.jsonls.setup(vim.tbl_deep_extend("force", jsonls_opts, opts))
+-- lspconfig.jsonls.setup(vim.tbl_deep_extend("force", jsonls_opts, opts))
 lspconfig.lua_ls.setup(vim.tbl_deep_extend("force", lua_ls_opts, opts))
 -- Temporarily use local `ols` instead of the one from Mason
 lspconfig.ols.setup(vim.tbl_deep_extend("force", {
