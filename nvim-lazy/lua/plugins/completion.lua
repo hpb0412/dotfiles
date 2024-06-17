@@ -62,7 +62,9 @@ return {
     cmp.setup {
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body) -- For `luasnip` users.
+          if snip_status_ok then
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
+          end
         end,
       },
       mapping = {
@@ -82,9 +84,9 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-          elseif luasnip.expandable() then
+          elseif snip_status_ok and luasnip.expandable() then
             luasnip.expand()
-          elseif luasnip.expand_or_jumpable() then
+          elseif snip_status_ok and luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif check_backspace() then
             fallback()
@@ -117,6 +119,7 @@ return {
           vim_item.menu = ({
             nvim_lsp = "[NVIM_LSP]",
             nvim_lua = "[NVIM_LUA]",
+            codeium = "[Codeium]",
             luasnip = "[Snippet]",
             buffer = "[Buffer]",
             path = "[Path]",
@@ -127,6 +130,7 @@ return {
       sources = {
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
+        { name = "codeium" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },

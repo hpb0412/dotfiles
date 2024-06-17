@@ -1,0 +1,65 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.31.1" # rocks.nvim can also manage itself :D
+"rocks-git.nvim" = "1.5.1"
+
+luasnip = { version = "2.3.0", pin = true }
+"mason-lspconfig.nvim" = { version = "1.29.0", pin = true }
+"bufferline.nvim" = { version = "4.6.1", pin = true}
+"neoscroll.nvim" = { version = "0.2.0", pin = true }
+"nvim-tree.lua" = { version = "1.4.0", pin = true }
+"rainbow-delimiters.nvim" = { version = "0.4.0", pin = true }
+# nvim-treesitter = { version = "0.9.2", pin = true } -- this is too old version, use git version below
+"trouble.nvim" = { version = "3.4.2", pin = true }
+"which-key.nvim" = { version = "2.1.0", pin = true }
+"tokyonight.nvim" = { version = "3.0.1", pin = true }
+"neorg" = { version = "8.7.1", pin = true }
+
+"diffview.nvim" = { version = "scm", pin = true }
+# nvim-ts-context-commentstring = { version = "scm", pin = true } -- not use because requires nvim-treesitter
+"nlsp-settings.nvim" = { version = "scm", pin = true }
+nvim-autopairs = { version = "scm", pin = true }
+# nvim-ts-autotag = { version = "scm", pin = true } -- not use because requires nvim-treesitter
+"none-ls.nvim" = { version = "scm", pin = true } # replacement of null-ls
+"telescope.nvim" = { version = "scm", pin = true }
+"lualine.nvim" = { version = "scm", pin = true }
+"git-blame.nvim" = { version = "scm", pin = true }
+"toggleterm.nvim" = { version = "scm", pin = true }
+
+
+vim-bbye = { git = "github:moll/vim-bbye" }
+"nvim-colorizer.lua" = { git = "github:norcalli/nvim-colorizer.lua" }
+friendly-snippets = { git = "github:rafamadriz/friendly-snippets" }
+"indent-blankline.nvim" = { git = "github:lukas-reineke/indent-blankline.nvim" }
+"gitsigns.nvim" = { git = "github:lewis6991/gitsigns.nvim" }
+"nvim-treesitter" = { git = "github:nvim-treesitter/nvim-treesitter" }
+# nvim-tree-docs = { git = "github:nvim-treesitter/nvim-tree-docs" }
+
+
+# complettion with nvim-cmp
+nvim-cmp = { git = "github:hrsh7th/nvim-cmp", pin = true }
+cmp-buffer = { version = "scm", pin = true }
+cmp-path = { version = "scm", pin = true }
+cmp-cmdline = { version = "scm", pin = true }
+cmp-nvim-lsp = { version = "scm", pin = true }
+cmp-nvim-lua = { git = "github:hrsh7th/cmp-nvim-lua", pin = true }
+cmp-nvim-lsp-document-symbol = { git = "github:hrsh7th/cmp-nvim-lsp-document-symbol", pin = true }
+cmp-nvim-lsp-signature-help = { git = "github:hrsh7th/cmp-nvim-lsp-signature-help", pin = true }
+cmp-latex-symbols = { git = "github:hrsh7th/cmp-latex-symbols", pin = true }
+
+# AI Tools
+# tabnine-nvim = { git = "github:codota/tabnine-nvim", build="./dl_binaries.sh" }
+"codeium.nvim" = { version = "scm", pin = true }
+
+# tree-sitter languages
