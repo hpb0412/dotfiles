@@ -3,10 +3,14 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer",       -- buffer completions
     "hrsh7th/cmp-path",         -- path completions
-    "hrsh7th/cmp-cmdline",      -- cmdline completions
-    "saadparwaiz1/cmp_luasnip", -- snippet completions
+    -- "hrsh7th/cmp-cmdline",      -- cmdline completions
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
+    -- "hrsh7th/cmp-nvim-lsp-document-symbol",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-omni",
+    "kdheepak/cmp-latex-symbols",
+    "saadparwaiz1/cmp_luasnip", -- snippet completions
   },
   config = function()
     local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -127,6 +131,10 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "latex_symbol" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "omni" },
+
       },
       confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,

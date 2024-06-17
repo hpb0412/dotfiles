@@ -1,3 +1,6 @@
+vim.loader.enable() -- replacement of `lewis6991/impatient.nvim`
+
+---@diagnostic disable-next-line: undefined-field
 if vim.g.vscode then
   -- VSCode extension
 else
