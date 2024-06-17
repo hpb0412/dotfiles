@@ -1,6 +1,9 @@
 return {
   "numToStr/Comment.nvim", -- commenting
-  dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+  dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+  enabled = false,
   config = function()
     local status_ok, comment = pcall(require, "Comment")
     if not status_ok then
