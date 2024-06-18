@@ -1,14 +1,14 @@
 return {
-  "nvimtools/none-ls.nvim",   -- for formatters and linters
+  "nvimtools/none-ls.nvim",                                     -- for formatters and linters
   config = function()
-    local null_ls_status_ok, nonels = pcall(require, "none-ls")
+    local null_ls_status_ok, nonels = pcall(require, "null-ls") -- `none-ls` keep the old module name from `null-ls`
     if not null_ls_status_ok then
       return
     end
 
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     local formatting = nonels.builtins.formatting
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     local diagnostics = nonels.builtins.diagnostics
 
     nonels.setup({
