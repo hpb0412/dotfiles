@@ -11,15 +11,15 @@ return {
       auto_install = true,                                                                                                                                                                                                                                                           -- Automatically install missing parsers when entering buffer
       sync_install = false,                                                                                                                                                                                                                                                          -- Install parsers synchronously (only applied to `ensure_installed`)
       ignore_install = { "" },                                                                                                                                                                                                                                                       -- List of parsers to ignore installing
-      -- autopairs = {
-      --   enable = true,
-      -- },
       highlight = {
         enable = true,    -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
       },
       indent = { enable = true, disable = { "yaml" } },
+      autopairs = {
+        enable = true,
+      },
       -- `tree_docs` is provided by `nvim-treesitter/nvim-tree-docs`
       tree_docs = {
         enable = true,
