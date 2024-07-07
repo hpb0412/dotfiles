@@ -1,8 +1,8 @@
 return {
-  "hrsh7th/nvim-cmp", -- The core completion plugin
+  "hrsh7th/nvim-cmp",     -- The core completion plugin
   dependencies = {
-    "hrsh7th/cmp-buffer",       -- buffer completions
-    "hrsh7th/cmp-path",         -- path completions
+    "hrsh7th/cmp-buffer", -- buffer completions
+    "hrsh7th/cmp-path",   -- path completions
     -- "hrsh7th/cmp-cmdline",      -- cmdline completions
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
@@ -19,11 +19,10 @@ return {
     end
 
     local snip_status_ok, luasnip = pcall(require, "luasnip")
-    if not snip_status_ok then
-      return
+    if snip_status_ok then
+      require("luasnip/loaders/from_vscode").lazy_load()
     end
 
-    require("luasnip/loaders/from_vscode").lazy_load()
 
     local check_backspace = function()
       local col = vim.fn.col "." - 1
