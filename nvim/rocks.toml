@@ -11,11 +11,13 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.31.1" # rocks.nvim can also manage itself :D
-"rocks-git.nvim" = "1.5.1"
+"rocks.nvim" = "2.40.2"
+"rocks-git.nvim" = "2.3.1"
 
+"aerial.nvim" = { version = "2.1.0", pin = true }
 luasnip = { version = "2.3.0", pin = true }
-"mason-lspconfig.nvim" = { version = "1.29.0", pin = true }
+"mason-lspconfig.nvim" = { version = "1.31.0", pin = true }
+"nvim-lspconfig" = { version = "1.0.0", pin = true }
 "bufferline.nvim" = { version = "4.6.1", pin = true}
 "neoscroll.nvim" = { version = "0.2.0", pin = true }
 "nvim-tree.lua" = { version = "1.4.0", pin = true }
@@ -26,6 +28,7 @@ luasnip = { version = "2.3.0", pin = true }
 "tokyonight.nvim" = { version = "3.0.1", pin = true }
 "neorg" = { version = "8.7.1", pin = true }
 
+"mason.nvim" = { version = "scm", pin = true }
 "diffview.nvim" = { version = "scm", pin = true }
 # nvim-ts-context-commentstring = { version = "scm", pin = true } -- not use because requires nvim-treesitter
 "nlsp-settings.nvim" = { version = "scm", pin = true }
@@ -61,5 +64,6 @@ cmp-latex-symbols = { git = "github:hrsh7th/cmp-latex-symbols", pin = true }
 # AI Tools
 # tabnine-nvim = { git = "github:codota/tabnine-nvim", build="./dl_binaries.sh" }
 "codeium.nvim" = { version = "scm", pin = true }
+
 
 # tree-sitter languages

@@ -45,6 +45,7 @@ else
 
     require "lsp"
 
+    require("plugins.aerial").config()
     require("plugins.autopairs").config()
     require("plugins.autotag").config()
     require("plugins.bufferline").config()
