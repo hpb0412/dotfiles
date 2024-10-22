@@ -27,6 +27,7 @@ luasnip = { version = "2.3.0", pin = true }
 "which-key.nvim" = { version = "2.1.0", pin = true }
 "tokyonight.nvim" = { version = "3.0.1", pin = true }
 "neorg" = { version = "8.7.1", pin = true }
+"ts-comments.nvim" = { version = "1.5.0", pin = true }
 
 "mason.nvim" = { version = "scm", pin = true }
 "diffview.nvim" = { version = "scm", pin = true }
@@ -40,7 +41,8 @@ nvim-autopairs = { version = "scm", pin = true }
 "git-blame.nvim" = { version = "scm", pin = true }
 "toggleterm.nvim" = { version = "scm", pin = true }
 
-
+base16-black-metal = { git = "github:metalelf0/base16-black-metal-scheme" }
+skull-vim = { git = "github:kadekillary/skull-vim" }
 vim-bbye = { git = "github:moll/vim-bbye" }
 "nvim-colorizer.lua" = { git = "github:norcalli/nvim-colorizer.lua" }
 friendly-snippets = { git = "github:rafamadriz/friendly-snippets" }

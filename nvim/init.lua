@@ -66,6 +66,7 @@ else
     require("plugins.toggleterm").config()
     require("plugins.treesitter").config()
     require("plugins.trouble").config_rock()
+    require("plugins.ts-comments").config()
     require("plugins.whichkey").config()
 
     -- AI tools

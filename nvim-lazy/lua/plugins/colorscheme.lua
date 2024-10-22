@@ -1,4 +1,4 @@
-local status_ok, cs = pcall(require, "themes.tokyonight")
+local status_ok, cs = pcall(require, "themes.skull-vim")
 
 if not status_ok then
   vim.notify("Colorscheme not found!")
