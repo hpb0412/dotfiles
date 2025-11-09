@@ -19,7 +19,7 @@ return {
             highlight_group = "Comment",
             display_virtual_text = 1,
             -- ignored_filetypes = { "lua", "c" }
-            enabled = 1,
+            enabled = 0,
         }
     end
 }

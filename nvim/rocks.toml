@@ -43,6 +43,7 @@ nvim-autopairs = { version = "scm", pin = true }
 
 base16-black-metal = { git = "github:metalelf0/base16-black-metal-scheme" }
 skull-vim = { git = "github:kadekillary/skull-vim" }
+bamboo = { git = "github:ribru17/bamboo.nvim" }
 vim-bbye = { git = "github:moll/vim-bbye" }
 "nvim-colorizer.lua" = { git = "github:norcalli/nvim-colorizer.lua" }
 friendly-snippets = { git = "github:rafamadriz/friendly-snippets" }

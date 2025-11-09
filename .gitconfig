@@ -5,6 +5,8 @@
 [user]
 	email = happyboy0412@gmail.com
 	name = Khoa Do
+[includeIf "gitdir:~/xhr/"]
+    path = ~/xhr/.gitconfig
 [alias]
 	g = grep --break --heading --line-number
 

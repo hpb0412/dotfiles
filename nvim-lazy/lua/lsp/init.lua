@@ -21,6 +21,7 @@ local lua_ls_opts = require("lsp.settings.lua_ls")
 local volar_opts = require("lsp.settings.volar")
 
 lspconfig.astro.setup(vim.tbl_deep_extend("force", astro_opts, opts))
+lspconfig.biome.setup(opts)
 lspconfig.clangd.setup(opts)
 lspconfig.cmake.setup(opts)
 lspconfig.cssls.setup(opts)
@@ -40,19 +41,20 @@ lspconfig.ols.setup(vim.tbl_deep_extend("force", {
 }, opts))
 lspconfig.prismals.setup(opts)
 lspconfig.tailwindcss.setup(opts)
+lspconfig.ts_ls.setup(opts)
 
-local ts_opts = {
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vim.fs.normalize "/usr/local/lib/node_modules/@vue/typescript-plugin",
-        languages = { "javascript", "typescript", "vue" },
-      },
-    },
-  },
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
-    "vue" }
-}
-lspconfig.ts_ls.setup(vim.tbl_deep_extend("force", ts_opts, opts))
-lspconfig.volar.setup(vim.tbl_deep_extend("force", volar_opts, opts))
+-- local ts_opts = {
+--   init_options = {
+--     plugins = {
+--       {
+--         name = "@vue/typescript-plugin",
+--         location = vim.fs.normalize "/usr/local/lib/node_modules/@vue/typescript-plugin",
+--         languages = { "javascript", "typescript", "vue" },
+--       },
+--     },
+--   },
+--   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
+--     "vue" }
+-- }
+-- lspconfig.ts_ls.setup(vim.tbl_deep_extend("force", ts_opts, opts))
+-- lspconfig.volar.setup(vim.tbl_deep_extend("force", volar_opts, opts))

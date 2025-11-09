@@ -51,9 +51,10 @@ end
 local function lsp_client_document_formatting(client)
     -- turn off formatter (to use prettier's formatter from null-ls)
     if
-    -- client.name == "tsserver"
-        client.name == "jsonls"
+        client.name == "ts_ls"
+        or client.name == "jsonls"
         or client.name == "html"
+        or client.name == "cssls"
         or client.name == "volar"
     then
         client.server_capabilities.document_formatting = false
