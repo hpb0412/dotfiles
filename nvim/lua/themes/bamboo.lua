@@ -1,4 +1,9 @@
 local status_ok, bamboo = pcall(require, "bamboo")
+
+if not status_ok then
+  vim.notify("bamboo theme not found!")
+end
+
 bamboo.setup {
   -- Main options --
   -- NOTE: to use the light theme, set `vim.o.background = 'light'`

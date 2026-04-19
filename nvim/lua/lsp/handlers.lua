@@ -35,13 +35,22 @@ M.setup = function()
     vim.diagnostic.config(config)
 
     -- define handlers
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-    })
+    -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    --     border = "rounded",
+    -- })
+    --
+    -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    --     border = "rounded",
+    -- })
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "rounded",
-    })
+    -- define handlers
+    vim.keymap.set('n', 'K', function()
+        vim.lsp.buf.hover({ border = "rounded" })
+    end, { desc = "LSP hover" })
+
+    vim.keymap.set('i', '<C-k>', function()
+        vim.lsp.buf.signature_help({ border = "rounded" })
+    end, { desc = "LSP signature help" })
 end
 
 -----------------------------

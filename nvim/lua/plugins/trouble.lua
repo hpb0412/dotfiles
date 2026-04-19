@@ -35,7 +35,7 @@ return {
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
     keys = keys,
-    config_rock = function()
+    config = function()
         local status, trouble = pcall(require, 'trouble')
         if not status then
             vim.notify("Cannot load trouble.nvim")

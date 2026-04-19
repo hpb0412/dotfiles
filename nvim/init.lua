@@ -4,12 +4,9 @@ vim.loader.enable() -- this is the replacement of `lewis6991/impatient.nvim`
 if vim.g.vscode then
     --
 else
-    vim.cmd.colorscheme("bamboo")
-
     require "options"
     require "keymaps"
     require "autocmd"
-    -- require "lsp"
 
     vim.pack.add({
         -- BASE
@@ -18,7 +15,6 @@ else
         "https://github.com/nvim-tree/nvim-web-devicons",
         "https://github.com/moll/vim-bbye",
         "https://github.com/JoosepAlviste/nvim-ts-context-commentstring",
-        "https://github.com/nvim-treesitter/nvim-tree-docs",
         "https://github.com/sindrets/diffview.nvim",
         "https://github.com/L3MON4D3/LuaSnip",
         "https://github.com/rafamadriz/friendly-snippets",
@@ -54,26 +50,13 @@ else
         "https://github.com/hiphish/rainbow-delimiters.nvim",
         "https://github.com/nvim-telescope/telescope.nvim",
         "https://github.com/akinsho/toggleterm.nvim",
+        "https://github.com/nvim-treesitter/nvim-tree-docs",
         "https://github.com/nvim-treesitter/nvim-treesitter",
         "https://github.com/folke/trouble.nvim",
         "https://github.com/folke/ts-comments.nvim",
         "https://github.com/folke/which-key.nvim",
         "https://github.com/ribru17/bamboo.nvim",
     })
-
-    -- local function packadd(name)
-    --     vim.cmd("packadd " .. name)
-    -- end
-    --
-    -- packadd("bamboo.nvim")
-    -- packadd("gitsigns.nvim")
-    -- packadd("indent-blankline.nvim")
-    -- packadd("nvim-colorizer.lua")
-    -- packadd("nvim-tree.lua")
-    -- packadd("nvim-treesitter")
-    -- packadd("neoscroll.nvim")
-    -- packadd("rainbow-delimiters.nvim")
-    -- packadd("which-key.nvim")
 
     local inactive = vim.iter(vim.pack.get()):filter(function(x) return not x.active end):map(function(x) return x.spec.name end):totable()
 
@@ -84,4 +67,5 @@ else
 
     require("themes")
     require("plugins")
+    require "lsp"
 end
