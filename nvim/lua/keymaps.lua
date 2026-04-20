@@ -9,12 +9,9 @@ local opts = {
 
 local term_opts = { silent = true }
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
 -- Remap space as leader key
 vim.g.mapleader = " "
-keymap("", "<Space>", "<Nop>", opts)
+vim.keymap.set("", "<Space>", "<Nop>", opts)
 vim.g.maplocalleader = " "
 
 -----------
@@ -32,9 +29,9 @@ vim.g.maplocalleader = " "
 -- Map `Options` key on MacOs
 -- https://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim#answer-15399297
 
------------------
--- IMPORTANTCE --
------------------
+----------------
+-- IMPORTANCE --
+----------------
 
 -- Keymappings related to `LSP` -> `lsp.handlers`
 -- Keymappings starts with `<leader>` -> whichkey configuration
@@ -44,76 +41,76 @@ vim.g.maplocalleader = " "
 --------------
 
 -- disable arrow keys for normal mode and insert mode
-keymap("n", "<Up>", "<NOP>", opts)
-keymap("n", "<Down>", "<NOP>", opts)
-keymap("n", "<Left>", "<NOP>", opts)
-keymap("n", "<Right>", "<NOP>", opts)
-keymap("i", "<Up>", "<NOP>", opts)
-keymap("i", "<Down>", "<NOP>", opts)
-keymap("i", "<Left>", "<NOP>", opts)
-keymap("i", "<Right>", "<NOP>", opts)
+vim.keymap.set("n", "<Up>", "<NOP>", opts)
+vim.keymap.set("n", "<Down>", "<NOP>", opts)
+vim.keymap.set("n", "<Left>", "<NOP>", opts)
+vim.keymap.set("n", "<Right>", "<NOP>", opts)
+vim.keymap.set("i", "<Up>", "<NOP>", opts)
+vim.keymap.set("i", "<Down>", "<NOP>", opts)
+vim.keymap.set("i", "<Left>", "<NOP>", opts)
+vim.keymap.set("i", "<Right>", "<NOP>", opts)
 
 ------------
--- Normal --
+-- NORMAL --
 ------------
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<A-Up>", ":resize -2<CR>", opts)
-keymap("n", "<A-Down>", ":resize +2<CR>", opts)
-keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<A-Up>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<A-Down>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<A-Left>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-k>", ":m-2<CR>==", opts)
-keymap("n", "<A-j>", ":m+1<CR>==", opts)
-keymap("n", "˚", ":m-2<CR>==", opts) -- on Mac <A-k> is ˚
-keymap("n", "∆", ":m+1<CR>==", opts) -- on Mac <A-j> is ∆
+vim.keymap.set("n", "<A-k>", ":m-2<CR>==", opts)
+vim.keymap.set("n", "<A-j>", ":m+1<CR>==", opts)
+vim.keymap.set("n", "˚", ":m-2<CR>==", opts) -- on Mac <A-k> is ˚
+vim.keymap.set("n", "∆", ":m+1<CR>==", opts) -- on Mac <A-j> is ∆
 
 -- Y to  EOL
--- keymap("n", "Y", "y$", opts)
+-- vim.keymap.set("n", "Y", "y$", opts)
 
 ------------
 -- Insert --
 ------------
 
 -- Move text up and down
-keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("i", "˚", "<Esc>:m .-2<CR>==gi", opts) -- on Mac <A-k> is ˚
-keymap("i", "∆", "<Esc>:m .+1<CR>==gi", opts) -- on Mac <A-j> is ∆
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+vim.keymap.set("i", "˚", "<Esc>:m .-2<CR>==gi", opts) -- on Mac <A-k> is ˚
+vim.keymap.set("i", "∆", "<Esc>:m .+1<CR>==gi", opts) -- on Mac <A-j> is ∆
 
 ------------
 -- Visual --
 ------------
 
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "˚", ":m '<-2<CR>gv=gv", opts) -- on Mac <A-k> is ˚
-keymap("v", "∆", ":m '>+1<CR>gv=gv", opts) -- on Mac <A-j> is ∆
--- keymap("v", "p", '"_dP', opts)
+vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv", opts) -- on Mac <A-k> is ˚
+vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts) -- on Mac <A-j> is ∆
+-- vim.keymap.set("v", "p", '"_dP', opts)
 
 ------------------
 -- Visual Block --
 ------------------
 
 -- Move line up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
+vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 --------------
 -- Terminal --
@@ -121,7 +118,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Better terminal navigation
 -- we move these key binding into `toggleterm` module
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)

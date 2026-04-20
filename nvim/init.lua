@@ -4,6 +4,9 @@ vim.loader.enable() -- this is the replacement of `lewis6991/impatient.nvim`
 if vim.g.vscode then
     --
 else
+    require("vim._core.ui2").enable({
+        enable = true
+    })
     require "options"
     require "keymaps"
     require "autocmd"
