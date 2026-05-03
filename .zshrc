@@ -148,3 +148,4 @@ unset __mamba_setup
 
 # Added by Antigravity
 export PATH="/Users/khoado/.antigravity/antigravity/bin:$PATH"
+eval "$(uv generate-shell-completion zsh)"
