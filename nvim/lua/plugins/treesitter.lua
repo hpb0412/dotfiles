@@ -2,8 +2,13 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function()
-		local configs = require("nvim-treesitter.configs")
-		configs.setup({
+		local present, treesitter = pcall(require, "nvim-treesitter")
+		if not present then
+			vim.notify("Cannot load nvim-treesitter")
+			return
+		end
+
+		treesitter.setup({
 			ensure_installed = {
 				"bash",
 				"c",
@@ -41,7 +46,7 @@ return {
 			highlight = {
 				enable = true, -- false will disable the whole extension
 				disable = { "" }, -- list of language that will be disabled
-				additional_vim_regex_highlighting = true,
+				additional_vim_regex_highlighting = false, -- turn off coz not compatible with 0.12+
 			},
 			indent = { enable = true, disable = { "yaml" } },
 			autopairs = {
@@ -49,7 +54,7 @@ return {
 			},
 			-- `tree_docs` is provided by `nvim-treesitter/nvim-tree-docs`
 			tree_docs = {
-				enable = true,
+				enable = false, -- turn off coz not compatible with 0.12
 			},
 		})
 	end,

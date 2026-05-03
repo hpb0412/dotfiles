@@ -1,5 +1,3 @@
-local root_pattern = require('lspconfig.util').root_pattern
-
 local handlers = require("lsp.handlers")
 handlers.setup()
 
@@ -14,28 +12,46 @@ local lua_ls_opts = require("lsp.settings.lua_ls")
 local volar_opts = require("lsp.settings.volar")
 
 vim.lsp.config('astro', vim.tbl_deep_extend("force", astro_opts, opts))
+vim.lsp.enable('astro')
+
 vim.lsp.config('biome',opts)
+vim.lsp.enable('biome')
+
 vim.lsp.config('clangd', opts)
+vim.lsp.enable('clangd')
+
 vim.lsp.config('cmake', opts)
+vim.lsp.enable('cmake')
+
 vim.lsp.config('cssls', opts)
-vim.lsp.config('elmls', opts)
-vim.lsp.config('gleam', opts)
-vim.lsp.config('gopls', opts)
+vim.lsp.enable('cssls')
+
 vim.lsp.config('html', opts)
+vim.lsp.enable('html')
+
 vim.lsp.config('jsonls', vim.tbl_deep_extend("force", jsonls_opts, opts))
+vim.lsp.enable('jsonls')
+
 vim.lsp.config('lua_ls', vim.tbl_deep_extend("force", lua_ls_opts, opts))
+vim.lsp.enable('lua_ls')
+
 
 -- Temporarily use local `ols` instead of the one from Mason
-vim.lsp.config('ols', vim.tbl_deep_extend("force", {
-  cmd = { vim.fn.expand("~/ols/ols") },
-  filetypes = { "odin" },
-  rootdir = {
-    root_pattern("ols.json", ".git", "*.odin")
-  }
-}, opts))
-vim.lsp.config('prismals', opts)
+-- vim.lsp.config('ols', vim.tbl_deep_extend("force", {
+--   cmd = { vim.fn.expand("~/ols/ols") },
+--   filetypes = { "odin" },
+--   rootdir = function(path)
+--     return vim.fs.root(path, {"ols.json", ".git", "*.odin"})
+--   end
+-- }, opts))
+vim.lsp.config('ols', opts)
+vim.lsp.enable('ols')
+
 vim.lsp.config('tailwindcss', opts)
+vim.lsp.enable('tailwindcss')
+
 vim.lsp.config('ts_ls', opts)
+vim.lsp.enable('ts_ls')
 
 -- local ts_opts = {
 --   init_options = {
@@ -52,3 +68,4 @@ vim.lsp.config('ts_ls', opts)
 -- }
 -- vim.lsp.config.ts_ls', vim.tbl_deep_extend("force", ts_opts, opts))
 vim.lsp.config('volar', vim.tbl_deep_extend("force", volar_opts, opts))
+vim.lsp.enable('volar')

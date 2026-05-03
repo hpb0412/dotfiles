@@ -68,7 +68,7 @@ local options = {
     
     -- FOLDING -- (required nvim-treesitter), ref here: https://www.reddit.com/r/neovim/comments/psl8rq/sexy_folds/
     foldmethod = "expr",
-    foldexpr = "nvim_treesitter#foldexpr()",
+    foldexpr = "v:lua.vim.treesitter.foldexpr()",
     foldtext = [[substitute(getline(v:foldstart),'\t',repeat(' ',&tabstop),'g').'...'.trim(getline(v:foldend))]],
     fillchars = { fold = " " },
     foldnestmax = 20, -- maximum foldable level
