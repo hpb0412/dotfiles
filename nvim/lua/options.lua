@@ -25,7 +25,7 @@ local options = {
     -- VISUAL SETTINGS --
     termguicolors = true,       -- set term gui colors (most terminals support this)
     signcolumn = "yes",         -- always show the sign column, otherwise it would shift the text each time
-    colorcolumn = "100",         -- show column at 100 characters
+    colorcolumn = "100",        -- show column at 100 characters
     showmatch = true,           -- highlight matching bracket
     matchtime = 2,              -- how long to show matching bracket
     cmdheight = 3,              -- more space in the neovim command line for displaying messages

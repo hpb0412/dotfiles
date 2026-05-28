@@ -58,7 +58,11 @@ else
         "https://github.com/folke/trouble.nvim",
         "https://github.com/folke/ts-comments.nvim",
         "https://github.com/folke/which-key.nvim",
+        "https://git.sr.ht/~hedy/outline.nvim",
+        "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+
         "https://github.com/ribru17/bamboo.nvim",
+        "https://github.com/folke/tokyonight.nvim",
     })
 
     local inactive = vim.iter(vim.pack.get()):filter(function(x) return not x.active end):map(function(x) return x.spec.name end):totable()
