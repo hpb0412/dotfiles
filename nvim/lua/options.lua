@@ -3,6 +3,7 @@ local options = {
     number = true,              -- set numbered lines
     relativenumber = true,      -- set relative numbered lines
     cursorline = true,          -- highlight the current line
+    cursorcolumn = true,        -- hightlight the current column
     wrap = false,               -- display lines as one long line
     scrolloff = 8,              -- keep 8 lines above/below cursor
     sidescrolloff = 8,          -- keep 8 cols above/below cursor
