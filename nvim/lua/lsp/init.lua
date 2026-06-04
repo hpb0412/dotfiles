@@ -35,6 +35,8 @@ vim.lsp.enable('jsonls')
 vim.lsp.config('lua_ls', vim.tbl_deep_extend("force", lua_ls_opts, opts))
 vim.lsp.enable('lua_ls')
 
+vim.lsp.config('markdown_oxide', opts)
+vim.lsp.enable('markdown_oxide')
 
 -- Temporarily use local `ols` instead of the one from Mason
 -- vim.lsp.config('ols', vim.tbl_deep_extend("force", {
