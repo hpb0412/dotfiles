@@ -119,7 +119,7 @@ return {
         d = { "<cmd>Telescope diagnostics<cr>", "Find Diagnostics" },
         F = { "<cmd>Telescope find_files<cr>", "Find Files" },
         f = {
-          "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+          "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false, hidden=true})<cr>",
           "Find files" },
         g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
