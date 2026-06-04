@@ -41,6 +41,7 @@ local options = {
     showtabline = 2,            -- always show neovim tabs
     numberwidth = 4,            -- set number column width to 4
     -- guifont = "monospace:h17", -- the font used in graphical neovim applications
+    winborder = 'rounded',      -- global window border
     
     -- FILE HANDLING --
     backup = false,             -- don't creates a backup file
@@ -55,6 +56,7 @@ local options = {
     autowrite = false,          -- don't auto save
     
     -- BEHAVIOR SETTINGS --
+    -- autocomplete = true,        -- native insert-mode completion
     hidden = true,              -- allow hidden buffers errorbells = false,         -- no error bells
     backspace = { "indent", "eol", "start" }, -- better backspace behavior
     autochdir = false,          -- don't auto change dir 
