@@ -80,6 +80,10 @@
       "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "md-render.nvim": {
+      "rev": "56057d92d636a45cdeac5d1857e776e10d279d69",
+      "src": "https://github.com/delphinus/md-render.nvim"
+    },
     "neoscroll.nvim": {
       "rev": "c8d29979cb0cb3a2437a8e0ae683fd82f340d3b8",
       "src": "https://github.com/karb94/neoscroll.nvim"
@@ -108,17 +112,9 @@
       "rev": "4b7fbaa239c5db6b36f424a4521ca9f1a401be33",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
-    "nvim-tree-docs": {
-      "rev": "5db023d783da1e55339e5e25caaf72a59597e626",
-      "src": "https://github.com/nvim-treesitter/nvim-tree-docs"
-    },
     "nvim-tree.lua": {
       "rev": "d277467fc0d1d0e2bca88165a1de6b526f9f6fe8",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
-    },
-    "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
       "rev": "88c1453db4ba7dd24131086fe51fdf74e587d275",
@@ -147,10 +143,6 @@
     "rainbow-delimiters.nvim": {
       "rev": "08783ec022e7ddefe0f12a16f1ac4968f55478b0",
       "src": "https://github.com/hiphish/rainbow-delimiters.nvim"
-    },
-    "render-markdown.nvim": {
-      "rev": "5adf0895310c1904e5abfaad40a2baad7fe44a07",
-      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "telescope.nvim": {
       "rev": "471eebb1037899fd942cc0f52c012f8773505da1",
