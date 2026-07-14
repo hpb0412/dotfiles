@@ -55,6 +55,8 @@ else
         "https://github.com/akinsho/toggleterm.nvim",
         -- "https://github.com/nvim-treesitter/nvim-tree-docs",
         -- "https://github.com/nvim-treesitter/nvim-treesitter",
+        { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = 'main' },
+        -- "https://github.com/romus204/tree-sitter-manager.nvim",
         "https://github.com/folke/trouble.nvim",
         "https://github.com/folke/ts-comments.nvim",
         "https://github.com/folke/which-key.nvim",
@@ -62,8 +64,11 @@ else
         -- "https://github.com/MeanderingProgrammer/render-markdown.nvim",
         "https://github.com/delphinus/md-render.nvim",
 
+        -- THEMES
         "https://github.com/ribru17/bamboo.nvim",
         "https://github.com/folke/tokyonight.nvim",
+        "https://github.com/edeneast/nightfox.nvim",
+        -- "https://github.com/nyoom-engineering/oxocarbon.nvim",
     })
 
     local inactive = vim.iter(vim.pack.get()):filter(function(x) return not x.active end):map(function(x) return x.spec.name end):totable()
